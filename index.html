@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les Petits Plats</title>
+        <link rel="icon" type="image/png" href="./assets/mini_logo.png">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!-- HEADER WITH LOGO -->
+        <header>
+            <img src="./assets/logo.png" alt="Logo Les petits plats">
+
+            <!-- SEARCH BAR -->
+            <form id="searchFunction">
+                <label for="searchInput"></label>
+                <input type="search" id="searchInput" 
+                placeholder="Rechercher un ingrédient, un appareil, un ustensile ou une recette" 
+                aria-label="Search into this website content">
+                <i class="fas fa-search"></i>
+            </form>
+
+            <!-- BADGES ADDED ; DEPENDS ON RESEARCH ELEMENT -->
+            <nav id="tagsName">
+                <span id="tagsIngredient"></span>
+                <span id="tagsDevice"></span>
+                <span id="tagsUtensil"></span>
+            </nav>
+
+            <!-- FILTERS -->
+            <div id="filters">
+                <div id="ingredients">
+
+                </div>
+                <div id="devices">
+
+                </div>
+                <div id="utensils">
+
+                </div>
+            </div>
+
+            <!-- MESSAGE OF RESULT FOR DYNAMIC SEARCH -->
+            <aside id="searchResultMessage">
+                <span>Aucun résultat pour votre recherche</span>
+                <i class="far fa-times-circle"></i>
+            </aside>
+        </header>
+
+        <!-- RECIPES PART -->
+        <main id="mainPart">
+        </main>
+    </body>
+</html>
