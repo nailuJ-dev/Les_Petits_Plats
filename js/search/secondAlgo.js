@@ -1,14 +1,14 @@
 import recipes from '../datas/recipesDatas.js'
 
-const recipesAnalysis = preformData(recipes);
+const recipesAnalysis = preformData(recipesApi);
 let currentSearch = [];
 export function getCurrentSearch() {
     return currentSearch;
 };
 
-function preformData (recipes) {
+function preformData (recipesApi) {
     let data = [];
-    recipes.forEach(recipe => {
+    recipesApi.forEach(recipe => {
         data.push({
             'name': recipe.name.toLowerCase(),
             'description': recipe.description.toLowerCase(),

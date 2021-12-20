@@ -8,7 +8,7 @@ export default class SearchAlgorithm {
 
         // call API datas or transform Datas in an array stocked at const ?
 
-        recipes.forEach(recipe => {
+        recipesApi.forEach(recipe => {
             if (Utils.lowerText(recipe.name).includes(Utils.lowerText(value)) || Utils.lowerText(recipe.description).includes(Utils.lowerText(value)) || recipe.ingredients.some(element => Utils.lowerText(element.ingredient).includes(value))) {
                 recipesMatch.push(recipe);
             };
