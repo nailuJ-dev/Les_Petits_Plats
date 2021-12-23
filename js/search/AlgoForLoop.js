@@ -50,6 +50,11 @@ export default class SearchAlgorithm {
     // Searching by ingredients tags
     static searchingByIngredient (recipes, ingredientTag) {
         const ingredientResult = [];
+        for (const recipe of recipes) {
+            if (recipe.ingredients.some(element => Utils.lowerText(element.ingredient).includes(ingredientTag))) {
+                ingredientResult.push(recipe);
+            };
+        };
 /*        recipes.forEach(recipe => {
             if (recipe.ingredients.some(element => Utils.lowerText(element.ingredient).includes(ingredientTag))) {
                 ingredientResult.push(recipe);
@@ -61,7 +66,12 @@ export default class SearchAlgorithm {
     // Searching by appliances tags
     static searchingByAppliance (recipes, applianceTag) {
         const applianceResult = [];
-/*        recipes.forEach(recipe => {
+        for (const recipe of recipes) {
+            if (Utils.lowerText(recipe.appliance).includes(applianceTag)) {
+                applianceResult.push(recipe);
+            };
+        };
+        /* recipes.forEach(recipe => {
             if (Utils.lowerText(recipe.appliance).includes(applianceTag)) {
                 applianceResult.push(recipe);
             };
@@ -72,6 +82,11 @@ export default class SearchAlgorithm {
     // Searching by ustensils tags
     static searchingByUstensils (recipes, ustentilTag) {
         const ustensilsResult = [];
+        for (const recipe of recipes) {
+            for (let i = 0; Utils.lowerText(i).includes(ustentilTag); i++) {
+                ustensilsResult.push(recipe);
+            };
+        };
 /*        recipes.forEach(recipe => {
             recipe.ustensils.forEach(ustensil => {
                 if (Utils.lowerText(ustensil).includes(ustentilTag)) {
