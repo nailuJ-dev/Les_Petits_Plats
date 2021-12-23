@@ -3,8 +3,7 @@ const recipesApi = [
         "id": 1,
         "name": "Limonade de Coco",
         "servings": 1,
-        "ingredients":[
-            {
+        "ingredients":[{
                 "ingredient": "Lait de coco",
                 "quantity": 400,
                 "unit": "ml"

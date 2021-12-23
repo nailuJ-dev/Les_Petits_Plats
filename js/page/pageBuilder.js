@@ -27,6 +27,8 @@ export default class PageBuilder {
         article.setAttribute('data-filter-appliance', dataAppliances);
         article.setAttribute('data-filter-ustensil', dataUstensils);
         article.innerHTML = this.getArticleBuilderHTML(collection);
+        console.log(typeof article)
+        return article;
     };
 
     static getArticleBuilderHTML (collection) {
