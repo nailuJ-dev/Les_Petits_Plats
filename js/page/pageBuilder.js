@@ -10,16 +10,16 @@ export default class PageBuilder {
 
     // Build the container for each recipe
     static recipeBuilder (collection) {
-        let recipePart = document.getElementById('mainPart')
+        const recipePart = document.getElementById('mainPart')
         return recipePart.appendChild(this.createArticlePart(collection));
     };
 
     static createArticlePart (collection) {
-        let article = document.createElement('article');
-        let dataIngredients = collection.ingredients.map(elt => Utils.lowerText(elt.ingredient));
-        let dataAppliances = Utils.lowerText(collection.appliance);
-        let dataUstensils = collection.ustensils;
-        let dataFilters = collection.ingredients.map(element => Utils.lowerText(element.ingredient)) + collection.ustensils + Utils.lowerText(collection.appliance);
+        const article = document.createElement('article');
+        const dataIngredients = collection.ingredients.map(elt => Utils.lowerText(elt.ingredient));
+        const dataAppliances = Utils.lowerText(collection.appliance);
+        const dataUstensils = collection.ustensils;
+        const dataFilters = collection.ingredients.map(element => Utils.lowerText(element.ingredient)) + collection.ustensils + Utils.lowerText(collection.appliance);
 
         article.classList.add('articleForRecipes');
         article.setAttribute('data-filter', dataFilters);

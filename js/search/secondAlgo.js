@@ -27,8 +27,8 @@ export function search(request, appliance, ustensil, ingredients) {
     appliance = appliance.toLowerCase();
     ustensil = ustensil.toLowerCase();
     ingredients = ingredients.map(ingredient => ingredient.toLowerCase());
-    let firstResult = recipes.filter(recipe => matchingAppliance(recipe, appliance) && matchingUstensils(recipe, ustensil) && matchingIngredientsTag(recipe, ingredients) && ( matchingName(recipe, request) || matchingDescription(recipe, request) || matchingIngredients(recipe, request)));
-    let finalResult = firstResult.map(x => x.raw);
+    const firstResult = recipes.filter(recipe => matchingAppliance(recipe, appliance) && matchingUstensils(recipe, ustensil) && matchingIngredientsTag(recipe, ingredients) && ( matchingName(recipe, request) || matchingDescription(recipe, request) || matchingIngredients(recipe, request)));
+    const finalResult = firstResult.map(x => x.raw);
     console.timeEnd('search');
     currentSearch = [appliance, ustensil, ingredients, finalResult];
     return finalResult;

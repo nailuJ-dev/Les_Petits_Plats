@@ -1,27 +1,27 @@
 const recipesApi = [
     {
         "id": 1,
-        "name" : "Limonade de Coco",
-        "servings" : 1,
-        "ingredients": [
+        "name": "Limonade de Coco",
+        "servings": 1,
+        "ingredients":[
             {
-                "ingredient" : "Lait de coco",
-                "quantity" : 400,
-                "unit" : "ml"
+                "ingredient": "Lait de coco",
+                "quantity": 400,
+                "unit": "ml"
             },
             {
-                "ingredient" : "Jus de citron",
-                "quantity" : 2
+                "ingredient": "Jus de citron",
+                "quantity": 2
             },
             {
-                "ingredient" : "Crème de coco",
-                "quantity" : 2,
-                "unit" : "cuillères à soupe"
+                "ingredient": "Crème de coco",
+                "quantity": 2,
+                "unit": "cuillères à soupe"
             },
             {
-                "ingredient" : "Sucre",
-                "quantity" : 30,
-                "unit" : "grammes"
+                "ingredient": "Sucre",
+                "quantity": 30,
+                "unit": "grammes"
             },
             {
                 "ingredient": "Glaçons"
@@ -34,34 +34,34 @@ const recipesApi = [
     },
     {
         "id": 2,
-        "name" : "Poisson Cru à la tahitienne",
+        "name": "Poisson Cru à la tahitienne",
         "servings": 2,
-        "ingredients": [
+        "ingredients":[
             {
-                "ingredient" : "Thon Rouge (ou blanc)",
-                "quantity" : 200,
-                "unit" : "grammes"
+                "ingredient": "Thon Rouge (ou blanc)",
+                "quantity": 200,
+                "unit": "grammes"
             },
             {
-                "ingredient" : "Concombre",
-                "quantity" : 1
+                "ingredient": "Concombre",
+                "quantity": 1
             },
             {
-                "ingredient" : "Tomate",
-                "quantity" : 2
+                "ingredient": "Tomate",
+                "quantity": 2
             },
             {
-                "ingredient" : "Carotte",
-                "quantity" : 1
+                "ingredient": "Carotte",
+                "quantity": 1
             },
             {
-                "ingredient" : "Citron Vert",
-                "quantity" : 5
+                "ingredient": "Citron Vert",
+                "quantity": 5
             },
             {
-                "ingredient" : "Lait de Coco",
-                "quantity" : 100,
-                "unit" : "ml"
+                "ingredient": "Lait de Coco",
+                "quantity": 100,
+                "unit": "ml"
             }
         ],
         "time": 60,
@@ -73,24 +73,24 @@ const recipesApi = [
         "id": 3,
         "name": "Poulet coco réunionnais",
         "servings": 4,
-        "ingredients": [
+        "ingredients":[
             {
                 "ingredient": "Poulet",
-                "quantity" : 1          
+                "quantity": 1
             },
             {
                 "ingredient": "Lait de coco",
-                "quantity" : 400,
-                "unit" : "ml"
+                "quantity": 400,
+                "unit": "ml"
             },
             {
                 "ingredient": "Coulis de tomate",
-                "quantity" : 25,
-                "unit" : "cl"
+                "quantity": 25,
+                "unit": "cl"
             },
             {
                 "ingredient": "Oignon",
-                "quantity" : 1
+                "quantity": 1
             },
             {
                 "ingredient": "Poivron rouge",
@@ -99,14 +99,15 @@ const recipesApi = [
             {
                 "ingredient": "Huile d'olive",
                 "quantity": 1,
-               "unit": "cuillères à soupe"
+                "unit": "cuillères à soupe"
             }
         ],
         "time": 80,
         "description": "Découper le poulet en morceaux, les faire dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, le lait de coco ainsi que le poivron et l'oignon découpés en morceaux. Laisser cuisiner 30 minutes de plus. Servir avec du riz",
         "appliance": "Cocotte",
         "ustensils": ["couteau"]
-    },{
+    },
+    {
         "id": 4,
         "name": "Salade de riz",
         "servings": 4,
@@ -120,7 +121,8 @@ const recipesApi = [
                 "ingredient": "Thon en miettes",
                 "quantity": 200,
                 "unit": "grammes"
-            },{
+            },
+            {
                 "ingredient": "Tomate",
                 "quantity": 2
             },
@@ -150,27 +152,27 @@ const recipesApi = [
         "servings": 4,
         "ingredients":[
            {
-               "ingredient": "Pâte feuilletée",
-               "quantity": 1 
+                "ingredient": "Pâte feuilletée",
+                "quantity": 1 
            },
            {
-               "ingredient": "Thon en miettes",
-               "quantity": 130,
-               "unit": "grammes"
+                "ingredient": "Thon en miettes",
+                "quantity": 130,
+                "unit": "grammes"
            },
            {
                 "ingredient": "Tomate",
                 "quantity": 2
            },
            {
-               "ingredient": "Crème fraiche",
-               "quantity": 2,
-               "unit": "cuillères à soupe"
+                "ingredient": "Crème fraiche",
+                "quantity": 2,
+                "unit": "cuillères à soupe"
            },
            {
-               "ingredient": "gruyère râpé",
-               "quantity": 100,
-               "unit": "grammes"
+                "ingredient": "gruyère râpé",
+                "quantity": 100,
+                "unit": "grammes"
            },
            {
                 "ingredient": "Moutarde de Dijon",
@@ -198,30 +200,30 @@ const recipesApi = [
             },
             {
                 "ingredient": "Oeuf",
-                "quantity": "2"
+                "quantity": 2
             },
             {
                 "ingredient":"Crème fraiche",
-                "quantity":25,
+                "quantity": 25,
                 "unit": "cl"
             },
             {
                 "ingredient": "Sucre en Poudre",
                 "quantity": 100,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Sucre vanillé",
                 "quantity": 1,
                 "unit": "sachets"
-
             }
         ],
         "time": 50,
         "description": "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
         "appliance": "Four",
         "ustensils": ["moule à tarte", "saladier", "fourchette"]
-    },{
+    },
+    {
         "id": 7,
         "name": "Tartelettes au chocolat et aux fraises",
         "servings": 6,
@@ -242,7 +244,7 @@ const recipesApi = [
             },
             {
                 "ingredient": "Beurre",
-                "quantity": "30",
+                "quantity": 30,
                 "unit": "grammes"
             },
             {
@@ -254,41 +256,41 @@ const recipesApi = [
         "description": "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
         "appliance":"Four",
         "ustensils":["moule à tartelettes (6)", "casserolle"]
-    }, {
+    },
+    {
         "id": 8,
         "name": "Brownie",
         "servings": 10,
         "ingredients":[
            {
                 "ingredient": "Noix",
-                "quantity": "180",
+                "quantity": 180,
                 "unit": "grammes"
            },
            {
-               "ingredient": "Chocolat noir",
-               "quantity": 150,
-               "unit": "grammes"
+                "ingredient": "Chocolat noir",
+                "quantity": 150,
+                "unit": "grammes"
            },
            {
-               "ingredient": "Beurre",
-               "quantity": 120,
-               "unit": "grammes"
+                "ingredient": "Beurre",
+                "quantity": 120,
+                "unit": "grammes"
            },
            {
                 "ingredient": "Oeuf",
                 "quantity": 2
            },
            {
-               "ingredient": "Sucre en Poudre",
-               "quantity": "110",
-               "unit": "grammes"
+                "ingredient": "Sucre en Poudre",
+                "quantity": 110,
+                "unit": "grammes"
            },
            {
                 "ingredient": "farine",
                 "quantity": 90,
                 "unit": "grammes"
            }
-
         ], 
         "time": 60,
         "description": "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
@@ -334,7 +336,7 @@ const recipesApi = [
         "ingredients":[
             {
                 "ingredient": "Roblochon",
-                "quantity": "1"
+                "quantity": 1
             },
             {
                 "ingredient": "Pommes de terre",
@@ -399,7 +401,8 @@ const recipesApi = [
         "description": "Commencer par couper les feuilles de salade, ajouter les tomates cerises et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découper le jambon de parme en fines lamelles. Ajouter la pomme elle aussi découpée en petit morceaux. Assaisonnez à votre gout. ",
         "appliance": "Saladier",
         "ustensils": ["couteau", "cuillère à melon" ]
-    },{
+    },
+    {
         "id": 12,
         "name": "Compote pomme rhubarbe",
         "servings": 4,
@@ -420,7 +423,7 @@ const recipesApi = [
             },
             {
                 "ingredient": "Eau",
-                "quantity" : "0.5",
+                "quantity" : 0.5,
                 "unit" : "tasses"
             }
         ],
@@ -452,7 +455,7 @@ const recipesApi = [
             {
                 "ingredient": "Vinaigre de cidre",
                 "quantity": 1,
-                "unit":"cuillère à soupe"
+                "unit": "cuillère à soupe"
             },
             {
                 "ingredient": "huile d'olive",
@@ -487,7 +490,7 @@ const recipesApi = [
             {
                 "ingredient": "Fromage à raclette",
                 "quantity": 300,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Oignon",
@@ -527,7 +530,7 @@ const recipesApi = [
             {
                 "ingredient": "Beurre salé",
                 "quantity": 30,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Chocolat au lait",
@@ -567,7 +570,7 @@ const recipesApi = [
             {
                 "ingredient": "Basilic",
                 "quantity": 1,
-                "unit":"tiges"
+                "unit": "tiges"
             },
             {
                 "ingredient": "huile d'olives",
@@ -597,7 +600,7 @@ const recipesApi = [
             {
                 "ingredient": "Jus de citron",
                 "quantity": 1,
-                "unit":"cuillères à soupe"
+                "unit": "cuillères à soupe"
             },
             {
                 "ingredient": "Glaçons",
@@ -658,7 +661,7 @@ const recipesApi = [
             {
                 "ingredient": "Sucre glace",
                 "quantity": 30,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Banane",
@@ -693,7 +696,7 @@ const recipesApi = [
             {
                 "ingredient": "Parmesan",
                 "quantity": 100,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "huile d'olive",
@@ -723,12 +726,12 @@ const recipesApi = [
             {
                 "ingredient": "Coulis de tomate",
                 "quantity": 300,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Viande hachée 1% de matière grasse",
                 "quantity": 400,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Vin rouge",
@@ -883,7 +886,7 @@ const recipesApi = [
             {
                 "ingredient": "Chocolat noir en pepites",
                 "quantity": 100,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Oeuf",
@@ -947,7 +950,7 @@ const recipesApi = [
             {
                 "ingredient": "Vermicelles",
                 "quantity": 1,
-                "unit":"verres"
+                "unit": "verres"
             },
             {
                 "ingredient": "Beurre salé",
@@ -982,7 +985,7 @@ const recipesApi = [
             {
                 "ingredient": "Beurre",
                 "quantity": 50,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Crême fraîche",
@@ -1072,7 +1075,7 @@ const recipesApi = [
             {
                 "ingredient": "Petits poids",
                 "quantity": 100,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Lardons",
@@ -1108,7 +1111,7 @@ const recipesApi = [
             {
                 "ingredient": "Gruyère",
                 "quantity": 100,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Lait",
@@ -1148,7 +1151,7 @@ const recipesApi = [
             {
                 "ingredient": "Fromage blanc",
                 "quantity": 4,
-                "unit":"cuillères à soupe"
+                "unit": "cuillères à soupe"
             },
             {
                 "ingredient": "Jus de citron",
@@ -1210,7 +1213,7 @@ const recipesApi = [
             {
                 "ingredient": "Crème fraîche",
                 "quantity": 2,
-                "unit":"cuillères à soupe"
+                "unit": "cuillères à soupe"
             },
             {
                 "ingredient": "Cumin",
@@ -1249,7 +1252,7 @@ const recipesApi = [
             {
                 "ingredient": "Lasagnes",
                 "quantity": 5,
-                "unit":"feuilles"
+                "unit": "feuilles"
             },
             {
                 "ingredient": "Gruyère",
@@ -1315,7 +1318,7 @@ const recipesApi = [
             {
                 "ingredient": "Pain",
                 "quantity": 6,
-                "unit":"tranches"
+                "unit": "tranches"
             },
             {
                 "ingredient": "Lait",
@@ -1359,7 +1362,7 @@ const recipesApi = [
             {
                 "ingredient": "Sucre roux",
                 "quantity": 80,
-                "unit":"grammes"
+                "unit": "grammes"
             }
         ],
         "time": 40,
@@ -1384,7 +1387,7 @@ const recipesApi = [
             {
                 "ingredient": "Sucre en poudre",
                 "quantity": 4,
-                "unit":"cuillères à café"
+                "unit": "cuillères à café"
             },
             {
                 "ingredient": "Bicarbonate",
@@ -1507,7 +1510,7 @@ const recipesApi = [
             {
                 "ingredient": "Beurre",
                 "quantity": 50,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "farine",
@@ -1542,7 +1545,7 @@ const recipesApi = [
             {
                 "ingredient": "Sucre",
                 "quantity": 80,
-                "unit":"grammes"
+                "unit": "grammes"
             }
         ],
         "time": 30,
@@ -1613,7 +1616,7 @@ const recipesApi = [
             {
                 "ingredient": "Crème Fraîche",
                 "quantity": 20,
-                "unit":"cl"
+                "unit": "cl"
             }
         ],
         "time": 5,
@@ -1643,7 +1646,7 @@ const recipesApi = [
             {
                 "ingredient": "Champignons de paris",
                 "quantity": 1,
-                "unit":"boites"
+                "unit": "boites"
             },
             {
                 "ingredient": "Gruyère",
@@ -1676,7 +1679,7 @@ const recipesApi = [
             {
                 "ingredient": "Ananas",
                 "quantity": 4,
-                "unit":"tranches"
+                "unit": "tranches"
             },
             {
                 "ingredient": "Miel",
@@ -1697,7 +1700,7 @@ const recipesApi = [
             {
                 "ingredient": "Pâte feuilletée",
                 "quantity": 400,
-                "unit":"grammes"
+                "unit": "grammes"
             },
             {
                 "ingredient": "Oeuf",
@@ -1716,7 +1719,7 @@ const recipesApi = [
             {
                 "ingredient": "Sucre glace",
                 "quantity": 500,
-                "unit":"grammes"
+                "unit": "grammes"
             }
         ],
         "time": 60,
