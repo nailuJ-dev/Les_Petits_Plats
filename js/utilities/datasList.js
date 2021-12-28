@@ -1,7 +1,7 @@
 export default class DataByDefault {
     // By default, all ingredients appeared before searching
     static getDefaultIngredients (ingred) {
-        let ingredients = [];
+        const ingredients = [];
         ingred.forEach((recipe) => {
             recipe.ingredients.forEach((ingred) => {
                 if (!ingredients.includes(ingred.ingredient.toLowerCase())) {

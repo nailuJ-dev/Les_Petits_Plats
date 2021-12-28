@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap');
+@import url(../css/recipe/recipe.css);
+@import url(../css/header/filters.css);
+@import url(../css/header/searchingBar.css);
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+}
+
+header {
+    font-family: Lato, sans-serif;
+}
+
+header img {
+    margin-top: 40px;
+    width: 220px;
+}
+
+html {
+    box-sizing: border-box;
+    color: #353535;
+    font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 900px) {
+    header img {
+        width: 160px;
+    }
+}

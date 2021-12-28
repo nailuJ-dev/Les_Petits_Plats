@@ -24,10 +24,10 @@ export default class IngredientFilter {
         let ul = document.createElement('ul');
         ul.classList.add('ingredientsUlList');
         this.exampleIngredients.appendChild(ul);
-
+        console.log(typeof ingredients)
         ingredients.forEach((ingredient) => {
             let listIngredients = document.createElement('li');
-            
+
             ul.appendChild(listIngredients);
             listIngredients.innerHTML = `${Utils.upperText(ingredient)}`
             listIngredients.classList.add('list-ingredients');

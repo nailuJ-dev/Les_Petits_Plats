@@ -1,6 +1,6 @@
 export default class SearchingMessageBuilder {
-    static messageSearchingResult = document.getElementById('messageSearchingResult');
-    static spanPartMessage = document.querySelector('#messageSearchingResult > span');
+    static messageSearchingResult = document.getElementById('searchResultMessage');
+    static spanPartMessage = document.querySelector('#searchResultMessage > span');
 
     static finalResultMessageBuilder (recipes) {
         this.messageDisplay();
@@ -26,7 +26,7 @@ export default class SearchingMessageBuilder {
     };
 
     static hideMessageClick () {
-        document.querySelector('#messageSearchingResult > i').addEventListener('click', () => {
+        document.querySelector('#searchResultMessage > i').addEventListener('click', () => {
             return this.hideMessageDisplay();
         });
     };
