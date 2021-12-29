@@ -26,8 +26,7 @@ export default class Utils {
 
     // get all ingredients, ustensils & appliances then sort them with alphabetically method
     static sortedByTitle (arr) {
-        let arrNoSorted = [...new Set(arr)];
-        let arrSorted = arrNoSorted.sort((a, b) => {
+        const arrSorted = [...new Set(arr)].sort((a, b) => {
             if (a.toLowerCase() < b.toLowerCase()) {
                 return -1;
             } else if (a.toLowerCase() > b.toLowerCase()) {
@@ -35,5 +34,6 @@ export default class Utils {
             };
             return arrSorted;
         });
+        return arrSorted;
     };
 };

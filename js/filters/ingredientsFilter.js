@@ -2,13 +2,13 @@ import Buttons from "../page/button.js";
 import PageBuilder from "../page/pageBuilder.js";
 import SearchingMessageBuilder from "../page/searchingMessage.js";
 import Utils from "../utilities/utils.js";
-import DataByDefault from "../utilities/datasList.js";
 import SearchAlgorithm from "../search/firstAlgo.js";
 import TagsElement from "../page/tags.js";
+import DataByDefault from "../utilities/datasList.js";
 
 export default class IngredientFilter {
     static exampleIngredients = document.getElementById('exampleIngredient');
-
+    
     static init(ingredients, recipes) {
         Utils.filtersCleared(this.exampleIngredients);
         Buttons.buttonsLaunching(document.querySelector("#ingredients > button"),
@@ -20,12 +20,13 @@ export default class IngredientFilter {
         this.filteringTags(recipes);
     }    
     // Display ingredients in ingredients filter area
-    static fillingIngredients(ingredients) {
+    static fillingIngredients(arraySorted) { 
+        console.log(arraySorted)
         let ul = document.createElement('ul');
         ul.classList.add('ingredientsUlList');
         this.exampleIngredients.appendChild(ul);
-        console.log(typeof ingredients)
-        ingredients.forEach((ingredient) => {
+        
+        arraySorted.forEach((ingredient) => {
             let listIngredients = document.createElement('li');
 
             ul.appendChild(listIngredients);
@@ -60,7 +61,8 @@ export default class IngredientFilter {
                 Buttons.buttonshideClick(document.querySelector("#ingredients > button"),
                     document.querySelector("#ingredientsFilterOpen"),
                     document.querySelector("#IngredientsFilterHidden"))
-                TagsElement.tagsBuilder(ingredientTag, Utils.upperText(event.target.getAttribute('data-filter')))
+                TagsElement
+                    .tagsBuilder(ingredientTag, Utils.upperText(event.target.getAttribute('data-filter')))
                     .removingTagClick(document.querySelector("#tagsIngredient > i"), event, ingredientTag, recipes);
                 SearchingMessageBuilder.finalResultMessageBuilder(SearchAlgorithm.searchingByIngredient(recipes, selected));
                 Utils.recipeSectionCleared();

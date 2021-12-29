@@ -1,10 +1,10 @@
 import PageBuilder from "../page/pageBuilder.js";
 import SearchingMessageBuilder from "../page/searchingMessage.js";
 import Utils from "../utilities/utils.js";
-import DataByDefault from "../utilities/datasList.js";
 import IngredientFilter from "../filters/ingredientsFilter.js";
 import AppliancesFilter from "../filters/appliancesFilter.js";
 import UstensilsFilter from "../filters/ustensilsFilter.js";
+import DataByDefault from "../utilities/datasList.js";
 
 export default class TagsElement {
     static IngredientsFilterHidden = document.querySelector('#IngredientsFilterHidden');

@@ -14,10 +14,10 @@ export default class DataByDefault {
 
     // By default, all devices appeared before searching
     static getDefaultAppliances (app) {
-        let appliances = [];
+        const appliances = [];
         app.forEach((recipe) => {
-            if (!appliances.includes(app.appliance.toLowerCase())) {
-                appliances.push(app.appliance.toLowerCase());
+            if (!appliances.includes(recipe.appliance.toLowerCase())) {
+                appliances.push(recipe.appliance.toLowerCase());
             };
         });
         return appliances;
@@ -25,11 +25,11 @@ export default class DataByDefault {
 
     // By default, all devices appeared before searching
     static getDefaultUstensils (usten) {
-        let ustensil = [];
+        const ustensil = [];
         usten.forEach((recipe) => {
             recipe.ustensils.forEach((usten) => {
-                if (!ustensil.includes(usten.ustensils.toLowerCase())) {
-                    ustensil.push(usten.ustensils.toLowerCase());
+                if (!ustensil.includes(usten.toLowerCase())) {
+                    ustensil.push(usten.toLowerCase());
                 };
             });
         });
