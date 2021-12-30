@@ -1,9 +1,9 @@
 import Buttons from "../page/button.js";
 import PageBuilder from "../page/pageBuilder.js";
 import SearchingMessageBuilder from "../page/searchingMessage.js";
-import Utils from "../utilities/utils.js";
 import SearchAlgorithm from "../search/firstAlgo.js";
 import TagsElement from "../page/tags.js";
+import Utils from "../utilities/utils.js";
 import DataByDefault from "../utilities/datasList.js";
 
 export default class IngredientFilter {

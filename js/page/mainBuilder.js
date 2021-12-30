@@ -1,10 +1,9 @@
 import AppliancesFilter from "../filters/appliancesFilter.js";
-import IngredientFilter from "../filters/ingredientsFilter.js";
-import UstensilsFilter from "../filters/ustensilsFilter.js";
 import DataByDefault from "../utilities/datasList.js";
 import PageBuilder from "./pageBuilder.js";
+import IngredientFilter from "../filters/ingredientsFilter.js";
 import SearchingMessageBuilder from "./searchingMessage.js";
-
+import UstensilsFilter from "../filters/ustensilsFilter.js";
 export default class MainBuilder {
     static init() {
         // Build Section with all Recipes before Search

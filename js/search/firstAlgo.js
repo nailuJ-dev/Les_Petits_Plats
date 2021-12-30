@@ -3,10 +3,11 @@ import Utils from "../utilities/utils.js"
 
 export default class SearchAlgorithm {
     static searchingInput (value) {
+        console.time('searchingInput');
         const recipesMatch = recipesApi.filter(recipe => Utils.lowerText(recipe.name).includes(Utils.lowerText(value)) ||
         Utils.lowerText(recipe.description).includes(Utils.lowerText(value)) ||
         recipe.ingredients.some(element => Utils.lowerText(element.ingredient).includes(value)));
-
+        console.timeEnd('searchingInput');
         // call API datas or transform Datas in an array stocked at const ?
 /*        recipesApi.forEach(recipe => {
             if (Utils.lowerText(recipe.name).includes(Utils.lowerText(value))

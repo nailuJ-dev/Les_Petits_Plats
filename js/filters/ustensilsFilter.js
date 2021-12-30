@@ -1,10 +1,10 @@
 import Buttons from "../page/button.js";
+import DataByDefault from "../utilities/datasList.js";
 import PageBuilder from "../page/pageBuilder.js";
 import SearchingMessageBuilder from "../page/searchingMessage.js";
-import Utils from "../utilities/utils.js";
-import DataByDefault from "../utilities/datasList.js";
 import SearchAlgorithm from "../search/firstAlgo.js";
 import TagsElement from "../page/tags.js";
+import Utils from "../utilities/utils.js";
 export default class UstensilsFilter {
     static exampleUstensils = document.getElementById('exampleUstensil');
 
