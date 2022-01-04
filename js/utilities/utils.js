@@ -14,6 +14,11 @@ export default class Utils {
         return text.charAt(0).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') + text.substring(1).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     };
 
+    static messageResultCleared () {
+        const clearMessageResult = document.getElementById('searchResultMessage').innerHTML = '';
+        return clearMessageResult;
+    }
+
     static recipeSectionCleared () {
         const clearRecipePart = document.getElementById('mainPart').innerHTML = '';
         return clearRecipePart;

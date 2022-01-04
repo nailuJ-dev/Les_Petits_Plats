@@ -21,7 +21,6 @@ export default class IngredientFilter {
     }    
     // Display ingredients in ingredients filter area
     static fillingIngredients(arraySorted) { 
-        console.log(arraySorted)
         let ul = document.createElement('ul');
         ul.classList.add('ingredientsUlList');
         this.exampleIngredients.appendChild(ul);
@@ -43,7 +42,7 @@ export default class IngredientFilter {
             Utils.filtersCleared(this.exampleIngredients);
             this.fillingIngredients(
                 Utils.characterValid(searchingValue) ?
-                SearchAlgorithm.searchInputFilters(ingredients, searchingValue) :
+                SearchAlgorithm.searchingByInput(ingredients, searchingValue) :
                 Utils.sortedByTitle(ingredients));
         });
     };

@@ -44,7 +44,7 @@ export default class AppliancesFilter {
             Utils.filtersCleared(this.exampleAppliances);
             this.fillingAppliances(
                 Utils.characterValid(searchingValue) ?
-                SearchAlgorithm.searchInputFilters(appliances, searchingValue) :
+                SearchAlgorithm.searchingByInput(appliances, searchingValue) :
                 Utils.sortedByTitle(appliances));
         });
     };

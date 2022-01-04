@@ -41,7 +41,7 @@ export default class UstensilsFilter {
             Utils.filtersCleared(this.exampleUstensils);
             this.fillingUstensils(
                 Utils.characterValid(searchingValue) ?
-                SearchAlgorithm.searchInputFilters(ustensils, searchingValue) :
+                SearchAlgorithm.searchingByInput(ustensils, searchingValue) :
                 Utils.sortedByTitle(ustensils));
         });
     };
