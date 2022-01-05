@@ -5,7 +5,7 @@ export default class SearchingMessageBuilder {
     static finalResultMessageBuilder (recipes) {
         this.messageDisplay();
         this.messageSearchingResult.style.backgroundColor = '#c4dcff'
-        this.spanPartMessage.innerHTML = recipes.length + ' recette(s) correspon(ent) à votre recherche';
+        this.spanPartMessage.innerHTML = recipes.length + ' recette(s) correspond(ent) à votre recherche';
         this.hideMessageClick();
         return this;
     };
