@@ -63,7 +63,7 @@ export default class AppliancesFilter {
                     document.querySelector("#deviceFilterOpen"),
                     document.querySelector("#deviceFilterHidden"))
                 TagsElement.tagsBuilder(deviceTag, Utils.upperText(event.target.getAttribute('data-filter')))
-                    .removingTagClick(document.querySelector("#tagsDevice > i"), event, deviceTag, recipes);
+                        .removingTagClick(document.querySelector("#tagsDevice > i"), event, deviceTag, recipes);
                 SearchingMessageBuilder.finalResultMessageBuilder(SearchAlgorithm.searchingByAppliance(recipes, selected));
                 Utils.recipeSectionCleared();
                 PageBuilder.finalDisplayBuilder(SearchAlgorithm.searchingByAppliance(recipes, selected));
