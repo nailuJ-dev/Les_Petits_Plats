@@ -5,6 +5,7 @@ import IngredientFilter from "../filters/ingredientsFilter.js";
 import AppliancesFilter from "../filters/appliancesFilter.js";
 import UstensilsFilter from "../filters/ustensilsFilter.js";
 import DataByDefault from "../utilities/datasList.js";
+import MainBuilder from "./mainBuilder.js";
 
 export default class TagsElement {
     static IngredientsFilterHidden = document.querySelector('#IngredientsFilterHidden');
@@ -47,8 +48,8 @@ export default class TagsElement {
     static removingTagClick(tag, event, tagElement, recipes) {
         tag.addEventListener('click', () => {
             this.clearingSection(event, tagElement, recipes);
-        })
-    }
+        });
+    };
 
     static clearingSection(event, tagElement, recipes) {
         event.target.classList.remove('selected');
@@ -62,5 +63,5 @@ export default class TagsElement {
         AppliancesFilter.fillingAppliances(DataByDefault.getDefaultAppliances(recipes));
         Utils.filtersCleared(document.getElementById('exampleUstensil'));
         UstensilsFilter.fillingUstensils(DataByDefault.getDefaultUstensils(recipes));
-    }
-}
+    };
+};

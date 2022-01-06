@@ -2,6 +2,7 @@
 import MainBuilder from "./page/mainBuilder.js";
 import SearchingMessageBuilder from "./page/searchingMessage.js";
 import SearchAlgorithm from "./search/firstAlgo.js";
+import DataByDefault from "./utilities/datasList.js";
 import Utils from "./utilities/utils.js";
 
 // Default builder without searching

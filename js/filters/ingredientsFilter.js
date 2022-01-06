@@ -5,6 +5,7 @@ import SearchAlgorithm from "../search/firstAlgo.js";
 import TagsElement from "../page/tags.js";
 import Utils from "../utilities/utils.js";
 import DataByDefault from "../utilities/datasList.js";
+import MainBuilder from "../page/mainBuilder.js";
 
 export default class IngredientFilter {
     static exampleIngredients = document.getElementById('exampleIngredient');
