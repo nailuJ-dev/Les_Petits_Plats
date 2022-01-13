@@ -1,25 +1,40 @@
-// Import modules
-import MainBuilder from "./page/mainBuilder.js";
-import SearchingMessageBuilder from "./page/searchingMessage.js";
-import SearchAlgorithm from "./search/firstAlgo.js";
-import Utils from "./utilities/utils.js";
+const generateFilters = (recipes) => {
+	let ingredients = [];
+	let devices = [];
+	let ustensiles = [];
+	recipes.forEach((recipe) => {
+		ingredients = [...new Set([...ingredients, ...recipe.ingredients.map((el) => el.ingredient)])].sort();
+		ustensiles = [...new Set([...ustensiles, ...recipe.ustensils.map((ustensil) => ustensil)])].sort();
+		devices = [...new Set([...devices, ...[recipe.appliance]])].sort();
+	});
+	return { ingredients, ustensiles, devices };
+};
 
-// Default builder without searching
-MainBuilder.init();
+const getData = async () =>
+	await fetch("../js/Data/recipes.json", {
+		mode: "no-cors",
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			Accept: "application/json",
+		},
+	})
+		.then((res) => res.json())
+		.catch((err) => console.log("An error occurs when fetching recipes", err));
 
-// Builder with searching
-document.getElementById('searchInput').addEventListener('keyup', (key) => {
-    let searchValue = key.target.value;
-    if (Utils.characterValid(searchValue)) {
-        let result = SearchAlgorithm.searchingInput(searchValue);
-        if (result.recipesMatch.length === 0) {
-            return SearchingMessageBuilder.noResultMessageBuilder();
-        };
-        Utils.recipeSectionCleared();
-        MainBuilder.initSearch(result);
-        return;
-    };
-    // Reset Builder
-    Utils.recipeSectionCleared();
-    MainBuilder.init();
-});
+
+const generateRecipesMainPart = (recipes) => {
+	recipes.forEach((recipe) => {
+		recipesPart.append(new builderMainPart(recipe).createMainPart);
+	});
+};
+
+const init = async () => {
+	const { recipes } = await getData();
+	generateFilters(recipes);
+	inputEventsOnClick(recipes);
+	generateRecipesMainPart(recipes)
+	recipesFiltered(recipes, mainSearchBarInput);
+};
+
+init();

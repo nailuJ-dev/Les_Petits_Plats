@@ -1,81 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Les Petits Plats</title>
-        <link rel="icon" type="image/png" href="./assets/mini_logo.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="https://kit.fontawesome.com/0896c633d4.js" crossorigin="anonymous"></script>
-        <script src="./js/datas/recipesDatas.js"></script>
-        <script type="module" src="./js/main.js"></script>
-    </head>
-    <body>
-        <!-- HEADER WITH LOGO -->
-        <header>
-            <img src="./assets/logo.png" alt="Logo Les petits plats">
-
-            <!-- SEARCH BAR -->
-            <form id="searchFunction">
-                <label for="searchInput"></label>
-                <input type="search" id="searchInput" 
-                placeholder="Rechercher un ingrédient, un appareil, un ustensile ou une recette" 
-                aria-label="Search into this website recipes database" autocomplete="off">
-                <i class="fas fa-search"></i>
-            </form>
-
-            <!-- BADGES ADDED ; DEPENDS ON RESEARCH ELEMENT -->
-            <nav id="tagsName">
-                <span id="tagsIngredient"></span>
-                <span id="tagsDevice"></span>
-                <span id="tagsUtensil"></span>
-            </nav>
-
-            <!-- FILTERS -->
-            <div id="filters">
-                <div id="ingredients">
-                    <button>Ingrédients <i class="fas fa-chevron-down" id="ingredientsFilterOpen"></i></button>
-                    <div id="IngredientsFilterHidden">
-                        <label for="inputIngredients"></label>
-                        <input type="search" id="inputIngredients" aria-label="Search into ingredients database" placeholder="Rechercher un ingrédient">
-                        <i class="fas fa-chevron-up" id="IngredientsFilterClose"></i>
-                        <div id="exampleIngredient"></div>
-                    </div>
-                </div>
-
-                <div id="devices">
-                    <button>Appareils <i class="fas fa-chevron-down" id="deviceFilterOpen"></i></button>
-                    <div id="deviceFilterHidden">
-                        <label for="inputAppliance"></label>
-                        <input type="search" id="inputAppliance" aria-label="Search into devices database" placeholder="Rechercher un appareil">
-                        <i class="fas fa-chevron-up" id="deviceFilterClose"></i>
-                        <div id="exampleAppliance"></div>
-                    </div>
-                </div>
-                <div id="ustensils">
-                    <button>Ustensiles <i class="fas fa-chevron-down" id="ustensilsFilterOpen"></i></button>
-                    <div id="ustensilsFilterHidden">
-                        <label for="inputUstensil"></label>
-                        <input type="search" id="inputUstensil" aria-label="Search into ustensils database" placeholder="Rechercher un ustensile">
-                        <i class="fas fa-chevron-up" id="ustensilsFilterClose"></i>
-                        <div id="exampleUstensil"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MESSAGE OF RESULT FOR DYNAMIC SEARCH -->
-            <aside id="searchResultMessage">
-                <span>Aucun résultat pour votre recherche</span>
-                <i class="far fa-times-circle"></i>
-            </aside>
-        </header>
-
-        <!-- RECIPES PART -->
-        <main id="mainPart">
-        </main>
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Les petits plats</title>
+		<meta name="description" content="Trouvez la recette idéale pour votre repas !" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="./assets/mini_logo.png">
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css'>
+	</head>
+	<body class="body">
+		<header class="header">
+			<img class="headet_logo" src="./assets/logo.png" alt="Logo Les petits plats">
+		</header>
+		<div class="search">
+			<form class="search__bar">
+				<input
+					class="search__bar__input"
+					placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+					type="search"
+				/>
+				<button class="search__bar__submit" type="submit">
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+			<aside class="search__filter"></aside>
+		</div>
+		<div class="search__area">
+			<form class="search__area__form ingredients__form">
+				<input
+					class="search__area__form__input ingredients__input"
+					placeholder="Ingrédients"
+					type="search"
+				/>
+				<button class="search__area__form__submit ingredients__button" type="button">
+					<i class="fas fa-chevron-down ingredients__chevron"></i>
+				</button>
+			</form>
+			<aside class="search__area__form__results__ingredients">
+				<ul class="ingredients__results ingredients__hidden__results"></ul>
+			</aside>
+			<form class="search__area__form devices__form">
+				<input
+					class="search__area__form__input devices__input"
+					placeholder="Appareils"
+					type="search"
+				/>
+				<button class="search__area__form__submit  devices__button" type="button">
+					<i class="fas fa-chevron-down devices__chevron"></i>
+				</button>
+			</form>
+			<aside class="search__area__form__results__devices">
+				<ul class="devices__results devices__hidden__results"></ul>
+			</aside>
+			<form class="search__area__form ustensiles__form">
+				<input
+					class="search__area__form__input ustensiles__input"
+					placeholder="Ustensiles"
+					type="search"
+				/>
+				<button class="search__area__form__submit  ustensiles__button" type="button">
+					<i class="fas fa-chevron-down ustensiles__chevron"></i>
+				</button>
+			</form>
+			<aside class="search__area__form__results__ustensiles">
+				<ul class="ustensiles__results ustensiles__hidden__results"></ul>
+			</aside>
+		</div>
+		<main class="main__part"></main>
+		<script src="./js/main.js"></script>
+		<script src="./js/Builder/builderMainPart.js"></script>
+		<script src="./js/Utilities/createDomElements.js"></script>
+		<script src="./js/Utilities/frequentDomElement.js"></script>
+		<script src="./js/Utilities/displayFilters.js"></script>
+		<script src="./js/Utilities/searchAlgo.js"></script>
+		<script src="./js/Utilities/searchFilters.js"></script>
+	</body>
 </html>

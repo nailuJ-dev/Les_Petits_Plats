@@ -1,0 +1,18 @@
+.filter {
+    &__request {
+        align-items: center;
+        background-color: #47597E;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: 0.5rem 0rem 0.5rem 0rem;
+        padding: 0.5rem 0.3rem;
+
+
+        &__icon {
+            padding: 0.3rem 0.3rem;
+        };
+    };
+};
