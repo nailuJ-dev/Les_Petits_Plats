@@ -3,7 +3,7 @@
 body {
 	background-color: $backgroundColor;
 	font-family: "Lato", sans-serif;
-	margin: 0 1rem;
+	margin: 2rem 1rem;
 }
 
 .body {
@@ -35,8 +35,8 @@ body {
 	}
 
 	&__area {
-		display: grid;
-		gap: 0.5rem;
+		display: flex;
+		column-gap: 0.5rem;
 	}
 
 	&__area__form {
@@ -122,11 +122,11 @@ body {
 }
 
 .no__matching {
-	background-color: #F5FDB0;
+	background-color: #94baff;
 	border-radius: 5px;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	grid-column: span 3;
-	padding: 3rem 0rem;
+	padding: 1rem 0rem;
 	text-align: center;
 }
 /* Medium devices */
@@ -139,7 +139,7 @@ body {
 /* Large devices */
 @media screen and (min-width: $largeDevices) {
 	body {
-		margin: auto;
+		margin: 1rem 5rem;
 		max-width: 1200px;
 	}
 
@@ -158,7 +158,9 @@ body {
 	}
 
 	.search__area {
-		@include getGrid(repeat(6, 1fr), 1fr, 0rem 0.5rem);
+		display: flex;
+        column-gap: 1rem;
+
 		.ingredients {
 			grid-column: 1;
 			grid-row: 1;
@@ -171,6 +173,10 @@ body {
 			grid-column: 3;
 			grid-row: 1;
 		}
+
+        &__form {
+            width: 10rem;
+        }
 
 		&__form__results {
 			&__ingredients {
@@ -201,7 +207,8 @@ body {
 		}
 		&__displayed__results {
 			position: absolute;
-			@include getGrid(repeat(3, 2fr), 1fr, 0.5rem 5rem);
+            width: 29rem;
+			@include getGrid(repeat(2, 1fr), 1fr, 0.5rem 5rem);
 		}
 	}
 

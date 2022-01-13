@@ -28,3 +28,5 @@ const ustensilesInput = document.querySelector(".ustensiles__input");
 const ustensilesItem = document.querySelector(".ustensiles__item");
 const ustensilesButton = document.querySelector(".ustensiles__button");
 const ustensilesWrapper = document.querySelector(".ustensiles__results");
+
+const filterRequestElement = document.querySelectorAll(".filter__request");
