@@ -35,8 +35,8 @@ body {
 	}
 
 	&__area {
-		display: flex;
-		column-gap: 0.5rem;
+		display: grid;
+		gap: 0.5rem;
 	}
 
 	&__area__form {

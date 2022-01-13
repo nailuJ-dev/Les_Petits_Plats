@@ -45,7 +45,6 @@ const inputEventsOnClick = (recipes) => {
 				filtersSelected.push(item.textContent);
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
-                return (document.querySelector(".filter__request").style.backgroundColor = '#ED6454');
 			});
 		});
 	};
@@ -95,7 +94,6 @@ const inputEventsOnClick = (recipes) => {
 				filtersSelected.push(item.textContent);
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
-                document.querySelector(".filter__request").style.backgroundColor = '#3282F7';
 			});
 		});
 	};
@@ -144,7 +142,6 @@ const inputEventsOnClick = (recipes) => {
 				filtersSelected.push(item.textContent);
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
-                document.querySelector(".filter__request").style.backgroundColor = '#68D9A4';
 			});
 		});
 	};
