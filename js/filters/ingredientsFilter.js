@@ -55,7 +55,7 @@ export default class IngredientFilter {
         document.querySelector('#exampleIngredient').addEventListener('click', (event) => {
             let valueClass = event.target.classList.value;
 
-            if (!selected.includes(valueClass)) {
+            if (valueClass.indexOf('selected' === -1)) {
                 event.target.classList.add('selected');
                 selected.push(event.target.getAttribute('data-filter'));
                 Buttons.buttonshideClick(document.querySelector("#ingredients > button"),
