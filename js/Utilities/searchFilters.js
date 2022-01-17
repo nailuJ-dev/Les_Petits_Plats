@@ -4,8 +4,8 @@ const createFilterElements = (selectedUnduplicatedFilters, recipes) => {
 		return filterElements.append(
 			createDomElements(
 				"div",
-				`${filter}`,
-				{ class: "filter__request" },
+				`${filter.label}`,
+				{ class: `filter__request__${filter.type}` },
 				createDomElements("i", { class: "fas fa-times-circle filter__request__icon" })
 			)
 		);
@@ -14,7 +14,7 @@ const createFilterElements = (selectedUnduplicatedFilters, recipes) => {
 };
 
 const searchIntoFilters = (recipes, selectedUnduplicatedFilters) => {
-	const filterRequest = document.querySelectorAll(".filter__request");
+	const filterRequest = document.querySelectorAll("filter__request__ingredient, filter__request_ustensil, filter__request__device");
 	const filters = Array.from(filterRequest);
 	const result = recipes.filter((recipe) => {
 		return filters.every((item) => {
@@ -22,9 +22,9 @@ const searchIntoFilters = (recipes, selectedUnduplicatedFilters) => {
 			return (
 				recipe.ingredients.some((el) => {
 					return el.ingredient.toLowerCase().includes(formatedElement);
-				})
-				|| recipe.appliance.toLowerCase().includes(formatedElement)
-				|| recipe.ustensils.some((ustensil) => {
+				}) ||
+				recipe.appliance.toLowerCase().includes(formatedElement) ||
+				recipe.ustensils.some((ustensil) => {
 					return ustensil.toLowerCase() === formatedElement;
 				})
 			);
@@ -45,7 +45,7 @@ const searchIntoFilters = (recipes, selectedUnduplicatedFilters) => {
 				{ class: "no__matching" }
 			)
 		);
-	}
+	};
 };
 
 const searchFilterOnClick = (filters, recipes) => {
@@ -68,3 +68,8 @@ const removeFilter = (filterSelected, filtersArray, recipes) => {
 		searchIntoFilters(recipes, filtersArray);
 	}
 };
+
+/* filtersArray = filtersArray.filter (item => {
+    item.textContent != filterSelected.textContent});
+    return !filtersArray ? (recipesPart.innerHTML = "", generateRecipesMainPart(recipes)) : searchIntoFilters(recipes, filtersArray);
+*/

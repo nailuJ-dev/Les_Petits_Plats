@@ -42,7 +42,7 @@ const inputEventsOnClick = (recipes) => {
 		const ustensilesItems = document.querySelectorAll(".ustensiles__item");
 		ustensilesItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				filtersSelected.push(item.textContent);
+				filtersSelected.push({ label: item.textContent, type: 'ustensil' });
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
 			});
@@ -91,7 +91,7 @@ const inputEventsOnClick = (recipes) => {
 		const ingredientsItems = document.querySelectorAll(".ingredients__item");
 		ingredientsItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				filtersSelected.push(item.textContent);
+				filtersSelected.push({ label: item.textContent, type: 'ingredient' });
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
 			});
@@ -139,7 +139,7 @@ const inputEventsOnClick = (recipes) => {
 		const devicesItems = document.querySelectorAll(".devices__item");
 		devicesItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				filtersSelected.push(item.textContent);
+				filtersSelected.push({ label: item.textContent, type: 'device' });
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
 			});

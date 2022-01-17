@@ -8,7 +8,15 @@
         justify-content: center;
         margin: 0.5rem 0rem 0.5rem 0rem;
         padding: 0.5rem 0.3rem;
-
+        &__ingredient {
+            background-color: $blue;
+        }
+        &__ustensil {
+            background-color: $red;
+        }
+        &__device {
+            background-color: $green;
+        }
 
         &__icon {
             padding: 0.3rem 0.3rem;
