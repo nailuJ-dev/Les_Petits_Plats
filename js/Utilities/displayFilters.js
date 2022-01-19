@@ -75,7 +75,7 @@ const inputEventsOnClick = (recipes) => {
 
 	ingredientsInput.addEventListener("keyup", (el) => {
 		ingredientsWrapper.innerHTML = "";
-		if (el.target.value.length >= 3) {
+		if (el.target.value.length >= 1) {
 			const request = el.target.value.toLowerCase();
 			const results = ingredients.filter((ingredient) => {
 				return ingredient.toLowerCase().includes(request);
@@ -123,7 +123,7 @@ const inputEventsOnClick = (recipes) => {
 
 	devicesInput.addEventListener("keyup", (el) => {
 		devicesWrapper.innerHTML = "";
-		if (el.target.value.length > 3) {
+		if (el.target.value.length > 1) {
 			const request = el.target.value.toLowerCase();
 			const results = devices.filter((item) => {
 				return item.toLowerCase().includes(request);
@@ -140,7 +140,7 @@ const inputEventsOnClick = (recipes) => {
 		devicesItems.forEach((item) => {
 			item.addEventListener("click", () => {
 				filtersSelected.push({ label: item.textContent, type: 'device' });
-				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
+				selectedUnduplicatedFilters = [...new Set(filtersSelected)];
 				createFilterElements(selectedUnduplicatedFilters, recipes);
 			});
 		});

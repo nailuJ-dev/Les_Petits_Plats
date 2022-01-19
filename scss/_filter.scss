@@ -10,12 +10,33 @@
         padding: 0.5rem 0.3rem;
         &__ingredient {
             background-color: $blue;
-        }
+            color: white;
+            padding: 3px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+}
         &__ustensil {
             background-color: $red;
+            color: white;
+            padding: 3px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
         }
         &__device {
             background-color: $green;
+            color: white;
+            padding: 3px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
         }
 
         &__icon {

@@ -431,6 +431,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .ingredients__button {
@@ -744,6 +745,36 @@ body {
   justify-content: center;
   margin: 0.5rem 0rem 0.5rem 0rem;
   padding: 0.5rem 0.3rem;
+}
+.filter__request__ingredient {
+  background-color: #3282F7;
+  color: white;
+  padding: 3px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.filter__request__ustensil {
+  background-color: #ED6454;
+  color: white;
+  padding: 3px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.filter__request__device {
+  background-color: #68D9A4;
+  color: white;
+  padding: 3px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 .filter__request__icon {
   padding: 0.3rem 0.3rem;

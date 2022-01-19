@@ -10,11 +10,12 @@ const createFilterElements = (selectedUnduplicatedFilters, recipes) => {
 			)
 		);
 	});
+    console.log(selectedUnduplicatedFilters)
 	searchIntoFilters(recipes, selectedUnduplicatedFilters);
 };
 
-const searchIntoFilters = (recipes, selectedUnduplicatedFilters) => {
-	const filterRequest = document.querySelectorAll("filter__request__ingredient, filter__request_ustensil, filter__request__device");
+const searchIntoFilters = (recipes) => {
+	const filterRequest = document.querySelectorAll(".filter__request__ingredient, .filter__request__ustensil, .filter__request__device");
 	const filters = Array.from(filterRequest);
 	const result = recipes.filter((recipe) => {
 		return filters.every((item) => {
@@ -69,7 +70,20 @@ const removeFilter = (filterSelected, filtersArray, recipes) => {
 	}
 };
 
-/* filtersArray = filtersArray.filter (item => {
+/* filterArray = filtersArray.filter (item => {
     item.textContent != filterSelected.textContent});
-    return !filtersArray ? (recipesPart.innerHTML = "", generateRecipesMainPart(recipes)) : searchIntoFilters(recipes, filtersArray);
+    return (!filterArray) ? (recipesPart.innerHTML = "", generateRecipesMainPart(recipes)) : searchIntoFilters(recipes, filtersArray);
+*/
+
+/*
+	const index = filtersArray.indexOf(filterSelected);
+	filtersArray.slice(index, 0);
+	filterSelected.remove();
+	filtersSelected.splice(0, filtersSelected.length)
+	if (!filtersArray.length) {
+		recipesPart.innerHTML = "";
+		generateRecipesMainPart(recipes);
+	} else {
+		searchIntoFilters(recipes, filtersArray);
+	}
 */
