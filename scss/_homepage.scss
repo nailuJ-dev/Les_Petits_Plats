@@ -18,6 +18,9 @@ body {
 	display: flex;
 	justify-content: center;
 	margin: 1rem;
+    &__logo {
+        width: 16rem;
+    }
 }
 
 .search {
@@ -37,6 +40,18 @@ body {
 	&__area {
 		display: grid;
 		gap: 0.5rem;
+        &__ingredient {
+            display: flex;
+            flex-direction: column;
+        }
+        &__device {
+            display: flex;
+            flex-direction: column;
+        }
+        &__ustensil {
+            display: flex;
+            flex-direction: column;
+        }
 	}
 
 	&__area__form {
@@ -65,9 +80,23 @@ body {
 		background-color: $blue;
 		color: white;
 		padding: 1rem;
-		border-radius: 0 5px 5px 5px;
+		border-radius: 0 0 5px 5px;
 		margin: 0;
-	}
+		-webkit-border-radius: 0 0 5px 5px;
+		-moz-border-radius: 0 0 5px 5px;
+		-ms-border-radius: 0 0 5px 5px;
+		-o-border-radius: 0 0 5px 5px;
+        overflow-y: auto;
+        height: 35vh;
+        &::-webkit-scrollbar {
+            background-color: $blue;
+            border-radius: 0 0 5px 0;
+            -webkit-border-radius: 0 0 5px 0;
+            -moz-border-radius: 0 0 5px 0;
+            -ms-border-radius: 0 0 5px 0;
+            -o-border-radius: 0 0 5px 0;
+}
+}
 	&__item {
 		cursor: pointer;
 	}
@@ -87,9 +116,13 @@ body {
 		background-color: $green;
 		color: white;
 		padding: 1rem;
-		border-radius: 0 5px 5px 5px;
+		border-radius: 0 0 5px 5px;
 		margin: 0;
-	}
+		-webkit-border-radius: 0 0px 5px 5px;
+		-moz-border-radius: 0 0px 5px 5px;
+		-ms-border-radius: 0 0px 5px 5px;
+		-o-border-radius: 0 0px 5px 5px;
+}
 	&__item {
 		cursor: pointer;
 	}
@@ -109,9 +142,13 @@ body {
 		background-color: $red;
 		color: white;
 		padding: 1rem;
-		border-radius: 0 5px 5px 5px;
+		border-radius: 0 0 5px 5px;
 		margin: 0;
-	}
+		-webkit-border-radius: 0 0 5px 5px;
+		-moz-border-radius: 0 0 5px 5px;
+		-ms-border-radius: 0 0 5px 5px;
+		-o-border-radius: 0 0 5px 5px;
+}
 	&__item {
 		cursor: pointer
 	}
@@ -135,6 +172,12 @@ body {
 	.main__part {
 		@include getGrid(repeat(2, 1fr), 1fr, 1rem);
 	}
+
+    .header {
+        &__logo {
+            width: 25rem;
+        }
+    }
 }
 
 /* Large devices */
@@ -160,7 +203,7 @@ body {
 
 	.search__area {
 		display: flex;
-        column-gap: 1rem;
+        column-gap: 2rem;
 
 		.ingredients {
 			grid-column: 1;
@@ -200,7 +243,18 @@ body {
 		text-align: left;
 	}
 
-	.ingredients,
+	.ingredients {
+		&__hidden__results {
+			display: none;
+		}
+		&__displayed__results {
+			position: absolute;
+            width: 29rem;
+            height: 48vh;
+			@include getGrid(repeat(2, 1fr), 1fr, 0.5rem 5rem);
+		}
+    }
+
 	.devices,
 	.ustensiles {
 		&__hidden__results {

@@ -1,23 +1,83 @@
 const inputEventsOnClick = (recipes) => {
 	const { ingredients, ustensiles, devices } = generateFilters(recipes);
 
+    // Functions to  change CSS style
+
+    function basicIngredientCssStyle () {
+        ingredientsForm.style.width = null;
+        ingredientsInput.style.borderRadius = null;
+        ingredientsInput.placeholder = "Ingrédients";
+        ingredientsButton.style.borderRadius = null;
+    };
+
+    function basicDeviceCssStyle () {
+        devicesForm.style.width = null;
+        devicesInput.style.borderRadius = null;
+        devicesInput.placeholder = "Appareils";
+        devicesButton.style.borderRadius = null;
+    };
+
+    function basicUstensilCssStyle () {
+        ustensilesForm.style.width = null;
+        ustensilesInput.style.borderRadius = null;
+        ustensilesInput.placeholder = "Ustensiles";
+        ustensilesButton.style.borderRadius = null;
+    };
+
+    function resultsUstensilCssStyle () {
+        if (window.matchMedia('(min-width : 992px)').matches) {
+            ustensilesForm.style.width = "31rem";
+        } else {
+            ustensilesForm.style.width = "auto";
+        };
+        ustensilesInput.style.borderRadius = "5px 0 0 0";
+        ustensilesInput.placeholder = "Rechercher un ustensile";
+        ustensilesButton.style.borderRadius = "0 5px 0 0";
+    };
+
+    function resultsDeviceCssStyle () {
+        if (window.matchMedia('(min-width : 992px)').matches) {
+            devicesForm.style.width = "31rem";
+        } else {
+            devicesForm.style.width = "auto";
+        };
+        devicesInput.style.borderRadius = "5px 0 0 0";
+        devicesInput.placeholder = "Rechercher un ustensile";
+        devicesButton.style.borderRadius = "0 5px 0 0";
+    };
+
+    function resultsIngredientCssStyle () {
+        if (window.matchMedia('(min-width : 992px)').matches) {
+            ingredientsForm.style.width = "31rem";
+        } else {
+            ingredientsForm.style.width = "auto";
+        };
+        ingredientsInput.style.borderRadius = "5px 0 0 0";
+        ingredientsInput.placeholder = "Rechercher un ustensile";
+        ingredientsButton.style.borderRadius = "0 5px 0 0";
+    };
+
 	// Display ustensiles on click
 
 	ustensilesForm.addEventListener("click", () => {
 		if (ustensilesWrapper.classList.contains("ustensiles__hidden__results")) {
 			devicesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			devicesWrapper.classList.replace("devices__displayed__results", "devices__hidden__results")
+            basicDeviceCssStyle();
 			devicesWrapper.innerHTML = "";
 			ingredientsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			ingredientsWrapper.classList.replace("ingredients__displayed__results", "ingredients__hidden__results")
 			ingredientsWrapper.innerHTML = "";
+            basicIngredientCssStyle();
 			ustensilesChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
 			ustensilesWrapper.classList.replace("ustensiles__hidden__results","ustensiles__displayed__results")
+            resultsUstensilCssStyle();
 			ustensiles.forEach((ustensil) => {
 				return ustensilesWrapper.append(createDomElements("li", `${ustensil}`, { class: "ustensiles__item" }));
 			});
 		} else {
 			ustensilesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+            basicUstensilCssStyle();
 			ustensilesWrapper.classList.replace("ustensiles__displayed__results","ustensiles__hidden__results")
 			ustensilesWrapper.innerHTML = "";
 		}
@@ -54,12 +114,16 @@ const inputEventsOnClick = (recipes) => {
 	ingredientsForm.addEventListener("click", () => {
 		if (ingredientsWrapper.classList.contains("ingredients__hidden__results")) {
 			ingredientsChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+            resultsIngredientCssStyle();
 			ingredientsWrapper.classList.replace("ingredients__hidden__results","ingredients__displayed__results")
 			devicesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			ustensilesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			ustensilesWrapper.classList.replace("ustensiles__displayed__results", "ustensiles__hidden__results")
+            basicUstensilCssStyle();
 			devicesWrapper.classList.replace("devices__displayed__results", "devices__hidden__results")
+            basicDeviceCssStyle();
 			devicesWrapper.innerHTML = "";
+            ustensilesWrapper.innerHTML = ""
 			ingredients.forEach((ingredient) => {
 				return ingredientsWrapper.append(
 					createDomElements("li", `${ingredient}`, { class: "ingredients__item" })
@@ -67,6 +131,7 @@ const inputEventsOnClick = (recipes) => {
 			});
 		} else {
 			ingredientsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+            basicIngredientCssStyle();
 			ingredientsWrapper.classList.replace("ingredients__displayed__results", "ingredients__hidden__results")
 			ingredientsWrapper.innerHTML = "";
 		}
@@ -103,11 +168,14 @@ const inputEventsOnClick = (recipes) => {
 	devicesForm.addEventListener("click", () => {
 		if (devicesWrapper.classList.contains("devices__hidden__results")) {
 			devicesChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+            resultsDeviceCssStyle();
 			ingredientsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			ustensilesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			devicesWrapper.classList.replace("devices__hidden__results", "devices__displayed__results")
 			ingredientsWrapper.classList.replace("ingredients__displayed__results", "ingredients__hidden__results")
+            basicIngredientCssStyle();
 			ustensilesWrapper.classList.replace("ustensiles__displayed__results", "ustensiles__hidden__results")
+            basicUstensilCssStyle();
 			devices.forEach((device) => {
 				devicesWrapper.innerHTML += `<li class="devices__item">${device}</li>`;
 				ustensilesWrapper.innerHTML = "";
@@ -115,6 +183,7 @@ const inputEventsOnClick = (recipes) => {
 			});
 		} else {
 			devicesChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+            basicDeviceCssStyle();
 			devicesWrapper.classList.replace("devices__displayed__results", "devices__hidden__results")
 			devicesWrapper.innerHTML = "";
 		}

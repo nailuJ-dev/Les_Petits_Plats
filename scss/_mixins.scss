@@ -52,12 +52,12 @@
     @if $type == ingredients {
         background-color: $blue;
         border-radius: 0 5px 5px 0;
-    }
+}
 
     @if $type == devices {
         background-color: $green;
         border-radius: 0 5px 5px 0;
-    }
+}
 
     @if $type == ustensiles {
         background-color: $red;

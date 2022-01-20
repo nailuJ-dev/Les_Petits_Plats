@@ -7,6 +7,9 @@ const filterRequests = document.querySelectorAll("filter__request");
 
 const mainSearchBarInput = document.querySelector(".search__bar__input");
 const recipesPart = document.querySelector(".main__part");
+const displayedIngredientsResults = document.querySelector(".search__area__ingredient");
+const displayedUstensilesResults = document.querySelector(".search__area__ustensil");
+const displayedDevicesResults = document.querySelector(".search__area__device");
 
 const ingredientsChevron = document.querySelector(".ingredients__chevron");
 const ingredientsForm = document.querySelector(".ingredients__form");

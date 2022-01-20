@@ -12,7 +12,7 @@
 	</head>
 	<body class="body">
 		<header class="header">
-			<img class="headet_logo" src="./assets/logo.png" alt="Logo Les petits plats">
+			<img class="header__logo" src="./assets/logo.png" alt="Logo Les petits plats">
 		</header>
 		<div class="search">
 			<form class="search__bar">
@@ -28,45 +28,51 @@
 			<aside class="search__filter"></aside>
 		</div>
 		<div class="search__area">
-			<form class="search__area__form ingredients__form">
-				<input
-					class="search__area__form__input ingredients__input"
-					placeholder="Ingrédients"
-					type="search"
-				/>
-				<button class="search__area__form__submit ingredients__button" type="button">
-					<i class="fas fa-chevron-down ingredients__chevron"></i>
-				</button>
-			</form>
-			<aside class="search__area__form__results__ingredients">
-				<ul class="ingredients__results ingredients__hidden__results"></ul>
-			</aside> 
-			<form class="search__area__form devices__form">
-				<input
-					class="search__area__form__input devices__input"
-					placeholder="Appareils"
-					type="search"
-				/>
-				<button class="search__area__form__submit  devices__button" type="button">
-					<i class="fas fa-chevron-down devices__chevron"></i>
-				</button>
-			</form>
-			<aside class="search__area__form__results__devices">
-				<ul class="devices__results devices__hidden__results"></ul>
-			</aside>
-			<form class="search__area__form ustensiles__form">
-				<input
-					class="search__area__form__input ustensiles__input"
-					placeholder="Ustensiles"
-					type="search"
-				/>
-				<button class="search__area__form__submit  ustensiles__button" type="button">
-					<i class="fas fa-chevron-down ustensiles__chevron"></i>
-				</button>
-			</form>
-			<aside class="search__area__form__results__ustensiles">
-				<ul class="ustensiles__results ustensiles__hidden__results"></ul>
-			</aside>
+			<div class="search__area__ingredient">
+                <form class="search__area__form ingredients__form">
+                    <input
+                        class="search__area__form__input ingredients__input"
+                        placeholder="Ingrédients"
+                        type="search"
+                    />
+                    <button class="search__area__form__submit ingredients__button" type="button">
+                        <i class="fas fa-chevron-down ingredients__chevron"></i>
+                    </button>
+                </form>
+                <aside class="search__area__form__results__ingredients">
+                    <ul class="ingredients__results ingredients__hidden__results"></ul>
+                </aside> 
+            </div>
+            <div class="search__area__device">
+                <form class="search__area__form devices__form">
+                    <input
+                        class="search__area__form__input devices__input"
+                        placeholder="Appareils"
+                        type="search"
+                    />
+                    <button class="search__area__form__submit  devices__button" type="button">
+                        <i class="fas fa-chevron-down devices__chevron"></i>
+                    </button>
+                </form>
+                <aside class="search__area__form__results__devices">
+                    <ul class="devices__results devices__hidden__results"></ul>
+                </aside>
+            </div>
+            <div>
+                <form class="search__area__form ustensiles__form">
+                    <input
+                        class="search__area__form__input ustensiles__input"
+                        placeholder="Ustensiles"
+                        type="search"
+                    />
+                    <button class="search__area__form__submit  ustensiles__button" type="button">
+                        <i class="fas fa-chevron-down ustensiles__chevron"></i>
+                    </button>
+                </form>
+                <aside class="search__area__form__results__ustensiles">
+                    <ul class="ustensiles__results ustensiles__hidden__results"></ul>
+                </aside>
+            </div>
 		</div>
 		<main class="main__part"></main>
 		<script src="./js/main.js"></script>
