@@ -494,7 +494,7 @@ body {
   -ms-border-radius: 0 0 5px 5px;
   -o-border-radius: 0 0 5px 5px;
   overflow-y: auto;
-  height: 35vh;
+  max-height: 35vh;
 }
 .ingredients__displayed__results::-webkit-scrollbar {
   background-color: #3282F7;
@@ -710,7 +710,7 @@ body {
   .ingredients__displayed__results {
     position: absolute;
     width: 29rem;
-    height: 48vh;
+    max-height: 48vh;
     align-items: center;
     display: grid;
     gap: 0.5rem 5rem;
@@ -803,7 +803,7 @@ body {
 .filter__request__ingredient {
   background-color: #3282F7;
   color: white;
-  padding: 3px;
+  padding: 6px 6px 6px 10px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -813,7 +813,7 @@ body {
 .filter__request__ustensil {
   background-color: #ED6454;
   color: white;
-  padding: 3px;
+  padding: 6px 6px 6px 10px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -823,7 +823,7 @@ body {
 .filter__request__device {
   background-color: #68D9A4;
   color: white;
-  padding: 3px;
+  padding: 6px 6px 6px 10px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;

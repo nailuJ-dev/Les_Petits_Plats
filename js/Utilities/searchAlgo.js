@@ -1,4 +1,7 @@
 // Filter main requests and display recipes matching with them
+let mainSearch = getData();
+let filterTag = mainSearch
+
 
 const recipesFiltered = (recipes, mainSearchBar) => {
 	mainSearchBar.addEventListener('keyup', (el) => {
@@ -10,6 +13,8 @@ const recipesFiltered = (recipes, mainSearchBar) => {
                 recipe.description.toLowerCase().includes(request) ||
                 recipe.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(request)));
 			});
+            let mainSearch = results;
+            let filterTag = results;
 			generateRecipesMainPart(results);
 			if (!results.length) {
 				recipesPart.append(

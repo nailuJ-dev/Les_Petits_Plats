@@ -57,7 +57,7 @@ const searchFilterOnClick = (filters, recipes) => {
 	});
 };
 
-const removeFilter = (filterSelected, filtersArray, recipes) => {
+const removeFilter = (filterSelected, filtersArray, recipes) => { // replace recipes by filterTag
 	const index = filtersArray.indexOf(filterSelected);
 	filtersArray.slice(index, 0);
 	filterSelected.remove();
