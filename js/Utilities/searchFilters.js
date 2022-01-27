@@ -1,4 +1,4 @@
-const createFilterElements = (selectedUnduplicatedFilters, recipes) => {
+const createFilterElements = (selectedUnduplicatedFilters, filterTag) => {
 	filterElements.innerHTML = "";
 	selectedUnduplicatedFilters.forEach((filter) => {
 		return filterElements.append(
@@ -12,7 +12,7 @@ const createFilterElements = (selectedUnduplicatedFilters, recipes) => {
 	});
     console.log(selectedUnduplicatedFilters)
     console.log()
-	searchIntoFilters(recipes, selectedUnduplicatedFilters);
+	searchIntoFilters(filterTag, selectedUnduplicatedFilters);
 };
 
 const searchIntoFilters = (recipes) => {
@@ -50,10 +50,10 @@ const searchIntoFilters = (recipes) => {
 	};
 };
 
-const searchFilterOnClick = (filters, recipes) => {
+const searchFilterOnClick = (filters, filterTag) => {
 	filters.forEach((filter) => {
 		filter.addEventListener("click", () => {
-			removeFilter(filter, filters, recipes);
+			removeFilter(filter, filters, filterTag);
 		});
 	});
 };
