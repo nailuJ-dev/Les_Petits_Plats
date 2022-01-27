@@ -71,6 +71,29 @@
     }
 }
 
+@mixin filterdiv($type) {
+    display: flex;
+    border: none;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+
+    @if $type == ingredients {
+        background-color: $blue;
+    }
+
+    @if $type == devices {
+        background-color: $green;
+    }
+
+    @if $type == ustensiles {
+        background-color: $red;
+    }
+}
+
 @mixin form() {
     display: flex;
     height: 70px;

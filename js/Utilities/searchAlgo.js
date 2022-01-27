@@ -1,7 +1,9 @@
 // Filter main requests and display recipes matching with them
-let mainSearch = getData();
-let filterTag = mainSearch
-
+let mainSearch = async () =>
+await fetch("../js/Data/recipes.json")
+    .then((res) => res.json())
+    .catch((err) => console.log("An error occurs when fetching recipes", err));
+let filterTag = mainSearch();
 
 const recipesFiltered = (recipes, mainSearchBar) => {
 	mainSearchBar.addEventListener('keyup', (el) => {

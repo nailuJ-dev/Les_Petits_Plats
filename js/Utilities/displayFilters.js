@@ -1,26 +1,29 @@
-const inputEventsOnClick = (recipes) => {
-	const { ingredients, ustensiles, devices } = generateFilters(recipes);
+const inputEventsOnClick = (filterTag) => {
+	const { ingredients, ustensiles, devices } = generateFilters(filterTag);
 
     // Functions to  change CSS style
 
     function basicIngredientCssStyle () {
         ingredientsForm.style.width = null;
         ingredientsInput.style.borderRadius = null;
-        ingredientsInput.placeholder = "Ingrédients";
         ingredientsButton.style.borderRadius = null;
+        ingredientsDiv.style.display = null;
+        ingredientsInput.style.display = null;
     };
 
     function basicDeviceCssStyle () {
         devicesForm.style.width = null;
         devicesInput.style.borderRadius = null;
-        devicesInput.placeholder = "Appareils";
         devicesButton.style.borderRadius = null;
+        devicesDiv.style.display = null;
+        devicesInput.style.display = null;
     };
 
     function basicUstensilCssStyle () {
         ustensilesForm.style.width = null;
         ustensilesInput.style.borderRadius = null;
-        ustensilesInput.placeholder = "Ustensiles";
+        ustensilesInput.style.display = null;
+        ustensilesDiv.style.display = null;
         ustensilesButton.style.borderRadius = null;
     };
 
@@ -31,7 +34,9 @@ const inputEventsOnClick = (recipes) => {
             ustensilesForm.style.width = "auto";
         };
         ustensilesInput.style.borderRadius = "5px 0 0 0";
-        ustensilesInput.placeholder = "Rechercher un ustensile";
+        ustensilesInput.style.display = "flex";
+        ustensilesInput.focus();
+        ustensilesDiv.style.display = "none";
         ustensilesButton.style.borderRadius = "0 5px 0 0";
     };
 
@@ -42,8 +47,11 @@ const inputEventsOnClick = (recipes) => {
             devicesForm.style.width = "auto";
         };
         devicesInput.style.borderRadius = "5px 0 0 0";
-        devicesInput.placeholder = "Rechercher un ustensile";
+        devicesInput.style.display = "flex";
+        devicesInput.focus();
+        devicesDiv.style.display = "none";
         devicesButton.style.borderRadius = "0 5px 0 0";
+
     };
 
     function resultsIngredientCssStyle () {
@@ -53,7 +61,9 @@ const inputEventsOnClick = (recipes) => {
             ingredientsForm.style.width = "auto";
         };
         ingredientsInput.style.borderRadius = "5px 0 0 0";
-        ingredientsInput.placeholder = "Rechercher un ustensile";
+        ingredientsInput.style.display = "flex";
+        ingredientsInput.focus();
+        ingredientsDiv.style.display = "none";
         ingredientsButton.style.borderRadius = "0 5px 0 0";
     };
 
@@ -104,7 +114,7 @@ const inputEventsOnClick = (recipes) => {
 			item.addEventListener("click", () => {
 				filtersSelected.push({ label: item.textContent, type: 'ustensil' });
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
-				createFilterElements(selectedUnduplicatedFilters, recipes);
+				createFilterElements(selectedUnduplicatedFilters, filterTag);
 			});
 		});
 	};
@@ -158,7 +168,7 @@ const inputEventsOnClick = (recipes) => {
 			item.addEventListener("click", () => {
 				filtersSelected.push({ label: item.textContent, type: 'ingredient' });
 				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
-				createFilterElements(selectedUnduplicatedFilters, recipes);
+				createFilterElements(selectedUnduplicatedFilters, filterTag);
 			});
 		});
 	};
@@ -210,7 +220,7 @@ const inputEventsOnClick = (recipes) => {
 			item.addEventListener("click", () => {
 				filtersSelected.push({ label: item.textContent, type: 'device' });
 				selectedUnduplicatedFilters = [...new Set(filtersSelected)];
-				createFilterElements(selectedUnduplicatedFilters, recipes);
+				createFilterElements(selectedUnduplicatedFilters, filterTag);
 			});
 		});
 	};

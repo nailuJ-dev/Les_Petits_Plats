@@ -11,6 +11,7 @@ const createFilterElements = (selectedUnduplicatedFilters, recipes) => {
 		);
 	});
     console.log(selectedUnduplicatedFilters)
+    console.log()
 	searchIntoFilters(recipes, selectedUnduplicatedFilters);
 };
 
@@ -57,16 +58,16 @@ const searchFilterOnClick = (filters, recipes) => {
 	});
 };
 
-const removeFilter = (filterSelected, filtersArray, recipes) => { // replace recipes by filterTag
+const removeFilter = (filterSelected, filtersArray, filterTag) => { // replace recipes by filterTag
 	const index = filtersArray.indexOf(filterSelected);
 	filtersArray.slice(index, 0);
 	filterSelected.remove();
 	filtersSelected.splice(0, filtersSelected.length)
 	if (!filtersArray.length) {
 		recipesPart.innerHTML = "";
-		generateRecipesMainPart(recipes);
+		generateRecipesMainPart(filterTag);
 	} else {
-		searchIntoFilters(recipes, filtersArray);
+		searchIntoFilters(filterTag, filtersArray);
 	}
 };
 

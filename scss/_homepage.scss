@@ -71,8 +71,12 @@ body {
 		@include button(ingredients);
 	}
 	&__input {
+        display: none;
 		@include input(ingredients);
 	}
+    &__div {
+        @include filterdiv(ingredients);
+    }
 	&__hidden__results {
 		display: none;
 	}
@@ -107,8 +111,12 @@ body {
 		@include button(devices);
 	}
 	&__input {
+        display: none;
 		@include input(devices);
 	}
+    &__div {
+        @include filterdiv(devices);
+    }
 	&__hidden__results {
 		display: none;
 	}
@@ -133,8 +141,12 @@ body {
 		@include button(ustensiles);
 	}
 	&__input {
+        display: none;
 		@include input(ustensiles);
 	}
+    &__div {
+        @include filterdiv(ustensiles);
+    }
 	&__hidden__results {
 		display: none;
 	}
