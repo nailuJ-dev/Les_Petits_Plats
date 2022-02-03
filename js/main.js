@@ -1,3 +1,4 @@
+
 const generateFilters = (recipes) => {
 	let ingredients = [];
 	let devices = [];
@@ -10,18 +11,20 @@ const generateFilters = (recipes) => {
 	return { ingredients, ustensiles, devices };
 };
 
-const generateRecipesMainPart = (recipes) => {
-	recipes.forEach((recipe) => {
-		recipesPart.append(new builderMainPart(recipe).createMainPart);
+const generateRecipesMainPart = (input) => {
+	input.forEach((recipe) => {
+		recipesPart.append(new BuilderMainPart(recipe).createMainPart);
 	});
 };
 
-const init = async () => {
-	const { recipes } = await getData();
-	generateFilters(recipes);
-	inputEventsOnClick(recipes);
-	generateRecipesMainPart(recipes)
-	recipesFiltered(recipes, mainSearchBarInput);
+const init = () => {
+	const data = require('./Data/recipes.json')
+    let recipes = data.recipes
+    console.log(recipes)
+    generateFilters(recipes);
+    inputEventsOnClick(recipes);
+    generateRecipesMainPart(recipes)
+    recipesFiltered(mainSearchBarInput);
 };
 
 init();

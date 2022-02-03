@@ -1,6 +1,6 @@
 // Frequent DOM elements
+let selectedTags = [];
 
-const filtersSelected = [];
 
 const filterElements = document.querySelector(".search__filter");
 const filterRequests = document.querySelectorAll("filter__request");

@@ -1,6 +1,6 @@
-const createFilterElements = (selectedUnduplicatedFilters, filterTag) => {
+const createFilterElements = (recipes, selectedTags) => {
 	filterElements.innerHTML = "";
-	selectedUnduplicatedFilters.forEach((filter) => {
+	selectedTags.forEach((filter) => {
 		return filterElements.append(
 			createDomElements(
 				"div",
@@ -10,34 +10,34 @@ const createFilterElements = (selectedUnduplicatedFilters, filterTag) => {
 			)
 		);
 	});
-    console.log(selectedUnduplicatedFilters)
-    console.log()
-	searchIntoFilters(filterTag, selectedUnduplicatedFilters);
+    console.log(selectedTags)
+	searchIntoFilters(recipes, selectedTags);
 };
 
-const searchIntoFilters = (recipes) => {
+const searchIntoFilters = (input, filters = []) => {
+    recipesFiltered(input);
 	const filterRequest = document.querySelectorAll(".filter__request__ingredient, .filter__request__ustensil, .filter__request__device");
-	const filters = Array.from(filterRequest);
-	const result = recipes.filter((recipe) => {
-		return filters.every((item) => {
+	filters = Array.from(filterRequest);
+	recipes = recipes.filter((recipe) => {
+		return filters.filter((item) => {
 			const formatedElement = item.textContent.toLowerCase();
 			return (
-				recipe.ingredients.some((el) => {
+				recipe.ingredients.map((el) => {
 					return el.ingredient.toLowerCase().includes(formatedElement);
 				}) ||
 				recipe.appliance.toLowerCase().includes(formatedElement) ||
-				recipe.ustensils.some((ustensil) => {
+				recipe.ustensils.map((ustensil) => {
 					return ustensil.toLowerCase() === formatedElement;
 				})
 			);
 		});
 	});
-	if (result.length) {
+	if (filters.length) {
 		recipesPart.innerHTML = "";
-		generateRecipesMainPart(result);
-		searchFilterOnClick(filters, recipes);
-	} else if (!result.length) {
-		searchFilterOnClick(filters, recipes);
+		generateRecipesMainPart(filters);
+		searchFilterOnClick(filters, input);
+	} else if (!filters.length) {
+		searchFilterOnClick(filters, input);
 		recipesPart.innerHTML = "";
 		recipesPart.append(
 			createDomElements(
@@ -50,26 +50,18 @@ const searchIntoFilters = (recipes) => {
 	};
 };
 
-const searchFilterOnClick = (filters, filterTag) => {
+const searchFilterOnClick = (filters, input) => {
 	filters.forEach((filter) => {
 		filter.addEventListener("click", () => {
-			removeFilter(filter, filters, filterTag);
+			removeTag(input, selectedTags);
 		});
 	});
 };
 
-const removeFilter = (filterSelected, filtersArray, filterTag) => { // replace recipes by filterTag
-	const index = filtersArray.indexOf(filterSelected);
-	filtersArray.slice(index, 0);
-	filterSelected.remove();
-	filtersSelected.splice(0, filtersSelected.length)
-	if (!filtersArray.length) {
-		recipesPart.innerHTML = "";
-		generateRecipesMainPart(filterTag);
-	} else {
-		searchIntoFilters(filterTag, filtersArray);
-	}
-};
+const removeTag = (tag) => {
+    selectedTags = selectedTags.filter(item => item !== tag);
+    searchIntoFilters(userInput, selectedTags);
+}
 
 /* filterArray = filtersArray.filter (item => {
     item.textContent != filterSelected.textContent});

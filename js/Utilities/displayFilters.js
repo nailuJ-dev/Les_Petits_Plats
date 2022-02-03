@@ -1,5 +1,10 @@
-const inputEventsOnClick = (filterTag) => {
-	const { ingredients, ustensiles, devices } = generateFilters(filterTag);
+const inputEventsOnClick = (selectedTags) => {
+	const { ingredients, ustensiles, devices } = generateFilters(selectedTags);
+
+    const addTag = (tag) => {
+        selectedTags = [...selectedTags, tag];
+        searchIntoFilters(userInput, selectedTags);
+    }
 
     // Functions to  change CSS style
 
@@ -112,9 +117,8 @@ const inputEventsOnClick = (filterTag) => {
 		const ustensilesItems = document.querySelectorAll(".ustensiles__item");
 		ustensilesItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				filtersSelected.push({ label: item.textContent, type: 'ustensil' });
-				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
-				createFilterElements(selectedUnduplicatedFilters, filterTag);
+                addTag({ label: item.textContent, type: 'ustensil' }, selectedTags);
+				createFilterElements(selectedTags);
 			});
 		});
 	};
@@ -166,9 +170,8 @@ const inputEventsOnClick = (filterTag) => {
 		const ingredientsItems = document.querySelectorAll(".ingredients__item");
 		ingredientsItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				filtersSelected.push({ label: item.textContent, type: 'ingredient' });
-				const selectedUnduplicatedFilters = [...new Set(filtersSelected)];
-				createFilterElements(selectedUnduplicatedFilters, filterTag);
+				addTag({ label: item.textContent, type: 'ingredient' }, selectedTags);
+				createFilterElements(selectedTags);
 			});
 		});
 	};
@@ -218,10 +221,11 @@ const inputEventsOnClick = (filterTag) => {
 		const devicesItems = document.querySelectorAll(".devices__item");
 		devicesItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				filtersSelected.push({ label: item.textContent, type: 'device' });
-				selectedUnduplicatedFilters = [...new Set(filtersSelected)];
-				createFilterElements(selectedUnduplicatedFilters, filterTag);
+				addTag({ label: item.textContent, type: 'device' }, selectedTags);
+				createFilterElements(selectedTags);
 			});
 		});
 	};
 };
+
+export default inputEventsOnClick;
