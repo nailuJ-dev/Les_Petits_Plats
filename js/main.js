@@ -1,9 +1,10 @@
+import getData from "./Utilities/getData.js";
 
-const generateFilters = (recipes) => {
+const generateFilters = (input) => {
 	let ingredients = [];
 	let devices = [];
 	let ustensiles = [];
-	recipes.forEach((recipe) => {
+	input.forEach((recipe) => {
 		ingredients = [...new Set([...ingredients, ...recipe.ingredients.map((el) => el.ingredient)])].sort();
 		ustensiles = [...new Set([...ustensiles, ...recipe.ustensils.map((ustensil) => ustensil)])].sort();
 		devices = [...new Set([...devices, ...[recipe.appliance]])].sort();
@@ -17,8 +18,8 @@ const generateRecipesMainPart = (input) => {
 	});
 };
 
-const init = () => {
-	const data = require('./Data/recipes.json')
+const init = async () => {
+	const data = require('./Data/recipes.json');
     let recipes = data.recipes
     console.log(recipes)
     generateFilters(recipes);
