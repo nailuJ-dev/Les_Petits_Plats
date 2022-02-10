@@ -1,10 +1,10 @@
 const inputEventsOnClick = (selectedTags) => {
 	const { ingredients, ustensiles, devices } = generateFilters(selectedTags);
 
-    const addTag = (tag) => {
+    const addTag = (recipes, tag) => {
         selectedTags = [...selectedTags, tag];
-        searchIntoFilters(userInput, selectedTags);
-    }
+        searchIntoFilters(recipes, selectedTags);
+    };
 
     // Functions to  change CSS style
 
@@ -56,7 +56,6 @@ const inputEventsOnClick = (selectedTags) => {
         devicesInput.focus();
         devicesDiv.style.display = "none";
         devicesButton.style.borderRadius = "0 5px 0 0";
-
     };
 
     function resultsIngredientCssStyle () {
@@ -227,5 +226,3 @@ const inputEventsOnClick = (selectedTags) => {
 		});
 	};
 };
-
-export default inputEventsOnClick;

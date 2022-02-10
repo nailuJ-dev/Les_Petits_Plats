@@ -492,6 +492,9 @@ body {
   border-radius: 5px 0 0 5px;
   background-color: #3282F7;
 }
+.ingredients__chevron__up {
+  display: none;
+}
 .ingredients__hidden__results {
   display: none;
 }
@@ -563,6 +566,9 @@ body {
   border-radius: 5px 0 0 5px;
   background-color: #68D9A4;
 }
+.devices__chevron__up {
+  display: none;
+}
 .devices__hidden__results {
   display: none;
 }
@@ -623,6 +629,9 @@ body {
   width: 100%;
   border-radius: 5px 0 0 5px;
   background-color: #ED6454;
+}
+.ustensiles__chevron__up {
+  display: none;
 }
 .ustensiles__hidden__results {
   display: none;

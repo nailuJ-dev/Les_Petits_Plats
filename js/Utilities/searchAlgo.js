@@ -1,6 +1,6 @@
 // Filter main requests and display recipes matching with them
 
-const recipesFiltered = (mainSearchBar) => {
+const recipesFiltered = (mainSearchBar, recipes) => {
 	mainSearchBar.addEventListener('keyup', (el) => {
 		if (el.target.value.length >= 3) {
 			recipesPart.innerHTML = "";

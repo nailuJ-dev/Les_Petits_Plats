@@ -1,4 +1,4 @@
-import getData from "./Utilities/getData.js";
+
 
 const generateFilters = (input) => {
 	let ingredients = [];
@@ -19,13 +19,14 @@ const generateRecipesMainPart = (input) => {
 };
 
 const init = async () => {
-	const data = require('./Data/recipes.json');
+	const res = await getData();
+    const data = await res.json();
     let recipes = data.recipes
     console.log(recipes)
     generateFilters(recipes);
     inputEventsOnClick(recipes);
     generateRecipesMainPart(recipes)
-    recipesFiltered(mainSearchBarInput);
+    recipesFiltered(mainSearchBarInput, recipes);
 };
 
 init();
