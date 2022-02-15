@@ -449,7 +449,17 @@ body {
   margin-top: 0.5rem;
 }
 
-.ingredients__button {
+.ingredients__button__up {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #3282F7;
+  border-radius: 0 5px 5px 0;
+  display: none;
+}
+.ingredients__button__down {
   border: none;
   margin: 0;
   padding: 0 1rem;
@@ -523,7 +533,17 @@ body {
   cursor: pointer;
 }
 
-.devices__button {
+.devices__button__up {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #68D9A4;
+  border-radius: 0 5px 5px 0;
+  display: none;
+}
+.devices__button__down {
   border: none;
   margin: 0;
   padding: 0 1rem;
@@ -587,7 +607,17 @@ body {
   cursor: pointer;
 }
 
-.ustensiles__button {
+.ustensiles__button__up {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #ED6454;
+  border-radius: 0 5px 5px 0;
+  display: none;
+}
+.ustensiles__button__down {
   border: none;
   margin: 0;
   padding: 0 1rem;

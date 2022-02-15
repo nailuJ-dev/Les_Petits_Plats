@@ -11,27 +11,33 @@ const displayedIngredientsResults = document.querySelector(".search__area__ingre
 const displayedUstensilesResults = document.querySelector(".search__area__ustensil");
 const displayedDevicesResults = document.querySelector(".search__area__device");
 
-const ingredientsChevron = document.querySelector(".ingredients__chevron");
+const ingredientsChevronUp = document.querySelector(".ingredients__chevron__up");
+const ingredientsChevronDown = document.querySelector(".ingredients__chevron__down");
 const ingredientsForm = document.querySelector(".ingredients__form");
 const ingredientsInput = document.querySelector(".ingredients__input");
 const ingredientsItem = document.querySelector(".ingredients__item");
-const ingredientsButton = document.querySelector(".ingredients__button");
+const ingredientsButtonUp = document.querySelector(".ingredients__button__up");
+const ingredientsButtonDown = document.querySelector(".ingredients__button__down");
 const ingredientsWrapper = document.querySelector(".ingredients__results");
 const ingredientsDiv = document.querySelector(".ingredients__div");
 
-const devicesChevron = document.querySelector(".devices__chevron");
+const devicesChevronUp = document.querySelector(".devices__chevron__up");
+const devicesChevronDown = document.querySelector(".devices__chevron__down");
 const devicesForm = document.querySelector(".devices__form");
 const devicesInput = document.querySelector(".devices__input");
 const devicesItem = document.querySelector(".devices__item");
-const devicesButton = document.querySelector(".devices__button");
+const devicesButtonUp = document.querySelector(".devices__button__up");
+const devicesButtonDown = document.querySelector(".devices__button__down");
 const devicesWrapper = document.querySelector(".devices__results");
 const devicesDiv = document.querySelector(".devices__div");
 
-const ustensilesChevron = document.querySelector(".ustensiles__chevron");
+const ustensilesChevronUp = document.querySelector(".ustensiles__chevron__up");
+const ustensilesChevronDown = document.querySelector(".ustensiles__chevron__down");
 const ustensilesForm = document.querySelector(".ustensiles__form");
 const ustensilesInput = document.querySelector(".ustensiles__input");
 const ustensilesItem = document.querySelector(".ustensiles__item");
-const ustensilesButton = document.querySelector(".ustensiles__button");
+const ustensilesButtonUp = document.querySelector(".ustensiles__button__up");
+const ustensilesButtonDown = document.querySelector(".ustensiles__button__down");
 const ustensilesWrapper = document.querySelector(".ustensiles__results");
 const ustensilesDiv = document.querySelector(".ustensiles__div");
 

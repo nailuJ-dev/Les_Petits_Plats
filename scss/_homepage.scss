@@ -67,9 +67,13 @@ body {
 }
 
 .ingredients {
-	&__button {
+	&__button__up {
 		@include button(ingredients);
+        display: none;
 	}
+    &__button__down {
+		@include button(ingredients);
+    }
 	&__input {
         display: none;
 		@include input(ingredients);
@@ -110,9 +114,13 @@ body {
 }
 
 .devices {
-	&__button {
+	&__button__up {
 		@include button(devices);
+        display: none;
 	}
+    &__button__down {
+		@include button(devices);
+    }
 	&__input {
         display: none;
 		@include input(devices);
@@ -143,9 +151,13 @@ body {
 }
 
 .ustensiles {
-	&__button {
+	&__button__up {
 		@include button(ustensiles);
+        display: none;
 	}
+    &__button__down {
+		@include button(ustensiles);
+    }
 	&__input {
         display: none;
 		@include input(ustensiles);
