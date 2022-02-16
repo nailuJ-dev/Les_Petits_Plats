@@ -458,6 +458,11 @@ body {
   background-color: #3282F7;
   border-radius: 0 5px 5px 0;
   display: none;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  -ms-border-radius: 0 5px 0 0;
+  -o-border-radius: 0 5px 0 0;
 }
 .ingredients__button__down {
   border: none;
@@ -542,6 +547,11 @@ body {
   background-color: #68D9A4;
   border-radius: 0 5px 5px 0;
   display: none;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  -ms-border-radius: 0 5px 0 0;
+  -o-border-radius: 0 5px 0 0;
 }
 .devices__button__down {
   border: none;
@@ -616,6 +626,11 @@ body {
   background-color: #ED6454;
   border-radius: 0 5px 5px 0;
   display: none;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  -ms-border-radius: 0 5px 0 0;
+  -o-border-radius: 0 5px 0 0;
 }
 .ustensiles__button__down {
   border: none;

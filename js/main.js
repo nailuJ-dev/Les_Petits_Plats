@@ -1,13 +1,13 @@
 const generateFilters = (input) => {
 	let ingredients = [];
-	let devices = [];
-	let ustensiles = [];
+	let appliance = [];
+	let ustensils = [];
 	input.forEach((recipe) => {
 		ingredients = [...new Set([...ingredients, ...recipe.ingredients.map((el) => el.ingredient)])].sort();
-		ustensiles = [...new Set([...ustensiles, ...recipe.ustensils.map((ustensil) => ustensil)])].sort();
-		devices = [...new Set([...devices, ...[recipe.appliance]])].sort();
+		ustensils = [...new Set([...ustensils, ...recipe.ustensils.map((ustensil) => ustensil)])].sort();
+		appliance = [...new Set([...appliance, ...[recipe.appliance]])].sort();
 	});
-	return { ingredients, ustensiles, devices };
+	return { ingredients, ustensils, appliance };
 };
 
 const generateRecipesMainPart = (recipes) => {
@@ -33,8 +33,7 @@ const getFilteredRecipes = (recipes) => {
 		const mappedIngredients = ingredients.map(item => item.ingredient);
 		let flag = false
 
-		for (item in {name, ustensils, description, appliance, mappedIngredients}) {
-			
+		for (item in { name, ustensils, description, appliance, mappedIngredients }) {
 			if (item === 'mappedIngredients') {
 				if (mappedIngredients.includes(mainInput.toLowerCase())) {
 					flag = true;
@@ -102,13 +101,19 @@ const init = async () => {
 			const recipesToDisplay = getFilteredRecipes(recipes);
 			recipesPart.innerHTML = "";
 			generateRecipesMainPart(recipesToDisplay)
+            generateFilters(recipesToDisplay);
+            inputEventsOnClick(recipesToDisplay);
 		} else {
             recipesPart.innerHTML = "";
 			generateRecipesMainPart(recipes)
+            generateFilters(recipes);
+            inputEventsOnClick(recipes);
         }
-    })
-    // generateFilters(recipes);
-    // inputEventsOnClick(recipes);
+    });
+
+    generateFilters(recipes);
+    inputEventsOnClick(recipes);
+    //searchIntoFilters(recipes)
     // recipesFiltered(mainSearchBarInput, recipes);
 };
 
