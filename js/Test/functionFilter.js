@@ -15,9 +15,9 @@ const _searchAlgo = (input) => {
           item.description.toLowerCase().includes(request) ||
           item.ingredients.map(i => i.ingredient.toLowerCase().includes(request))
           );
-      });
-      generateRecipesMainPart(recipes);
-      if (!recipes.length) {
+        });
+        generateRecipesMainPart(recipes);
+    if (!recipes.length) {
         recipesPart.append(
           createDomElements (
             'div', `Aucune recette ne correspond à votre critère… vous pouvez
