@@ -29,6 +29,7 @@ const recipesFiltered = (mainSearchBar, recipes) => { // merde
                 recipe.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(request)));
 			});
 			generateRecipesMainPart(results);
+            inputEventsOnClick(results);
             lastSearch = results
 			if (!results.length) {
                 lastSearch = recipes
@@ -42,6 +43,7 @@ const recipesFiltered = (mainSearchBar, recipes) => { // merde
 		} else if (el.target.value.length <= 3) {
 			recipesPart.innerHTML = '';
 			generateRecipesMainPart(recipes);
+            inputEventsOnClick(recipes);
 		};
 	});
     return lastSearch;
@@ -58,6 +60,7 @@ const init = async () => {
 
     generateRecipesMainPart(recipes);
     recipesFiltered(mainSearchBar, recipes);
+    inputEventsOnClick(recipes);
 
     
 };

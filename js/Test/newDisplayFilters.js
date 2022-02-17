@@ -95,7 +95,7 @@ const inputEventsOnClick = (elements) => {
         };
 
         ingredientsInput.addEventListener('keyup', e => {
-            let recipesToDisplay = getFilteredRecipes(recipes);
+            let recipesToDisplay = getFilteredRecipes(element);
             if (e.target.value.length >= 1) {
                 recipesToDisplay = recipesToDisplay.filter(item => {
                     if (e.includes(item.ingredients)) {
@@ -106,9 +106,9 @@ const inputEventsOnClick = (elements) => {
                 });
             } else {
                 recipesPart.innerHTML = "";
-                generateRecipesMainPart(recipes)
-                generateFilters(recipes);
-                inputEventsOnClick(recipes);
+                generateRecipesMainPart(element)
+                generateFilters(element);
+                inputEventsOnClick(element);
             }
         });
         //ingredientsInputEventOnClick();
@@ -135,7 +135,7 @@ const inputEventsOnClick = (elements) => {
 		}
 
         devicesInput.addEventListener('keyup', e => {
-            let recipesToDisplay = getFilteredRecipes(recipes);
+            let recipesToDisplay = getFilteredRecipes(element);
             if (e.target.value.length >= 1) {
                 recipesToDisplay = recipesToDisplay.filter(item => {
                     if (e.includes(item.ingredients)) {
@@ -146,9 +146,9 @@ const inputEventsOnClick = (elements) => {
                 });
             } else {
                 recipesPart.innerHTML = "";
-                generateRecipesMainPart(recipes)
-                generateFilters(recipes);
-                inputEventsOnClick(recipes);
+                generateRecipesMainPart(element)
+                generateFilters(element);
+                inputEventsOnClick(element);
             }
         });
 		// devicesInputEventOnClick();
@@ -167,7 +167,7 @@ const inputEventsOnClick = (elements) => {
 			ustensils.forEach((ustensil) => {
                 console.log(ustensils)
                 ustensilesWrapper.innerHTML += `<li class="ustensiles__item" type="ustensil">${ustensil}</li>`;
-                ustensilesWrapper.innerHTML = "";
+                ingredientsWrapper.innerHTML = "";
                 devicesWrapper.innerHTML = "";
 			});
 		} else {
@@ -177,7 +177,7 @@ const inputEventsOnClick = (elements) => {
 		}
 
         ustensilesInput.addEventListener('keyup', e => {
-            let recipesToDisplay = getFilteredRecipes(recipes);
+            let recipesToDisplay = getFilteredRecipes(element);
             if (e.target.value.length >= 1) {
                 recipesToDisplay = recipesToDisplay.filter(item => {
                     if (e.includes(item.ingredients)) {
@@ -188,9 +188,9 @@ const inputEventsOnClick = (elements) => {
                 });
             } else {
                 recipesPart.innerHTML = "";
-                generateRecipesMainPart(recipes)
-                generateFilters(recipes);
-                inputEventsOnClick(recipes);
+                generateRecipesMainPart(element)
+                generateFilters(element);
+                inputEventsOnClick(element);
             }
         });
 
@@ -220,4 +220,28 @@ const tagUstensilDisplay = (results) => {
 	ustensiles.forEach((ustensil) => {
 		devicesWrapper.innerHTML += `<li class="devices__item" type="device">${ustensil}</li>`;
 	});
+};
+
+const createFilterElement = (tagFilter) => {
+    domElement.filterElements.innerHTML = "";
+	tagFilter.forEach((filter) => {
+		return domElement.filterElements.append(
+			createDomElements(
+				"div",
+				`${filter.label}`,
+				{ class: `filter__request__${filter.type}` },
+				createDomElements("i", { class: "fas fa-times-circle filter__request__icon" })
+			)
+		);
+	});
+}
+
+const addTag = (tag) => {
+    userTags = [...userTags, tag];
+    createFilterElement(userTags);
+}
+
+const removeTags = (tag) => {
+    userTags = userTags.filter(item => item !== tag);
+    createFilterElement(userTags);
 };
