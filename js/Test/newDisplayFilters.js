@@ -94,24 +94,29 @@ const inputEventsOnClick = (elements) => {
 			ingredientsWrapper.innerHTML = "";
         };
 
-        ingredientsInput.addEventListener('keyup', e => {
-            let recipesToDisplay = getFilteredRecipes(element);
-            if (e.target.value.length >= 1) {
-                recipesToDisplay = recipesToDisplay.filter(item => {
-                    if (e.includes(item.ingredients)) {
-                        const res = e.filter(tag => item.ingredients.map(i => i.ingredient.toLowerCase()).includes(tag));
-                        tagIngredientDisplay(res);
-                        return res.length;
-                    };
+        ingredientsInput.addEventListener("keyup", (el) => {
+            ingredientsWrapper.innerHTML = "";
+            if (el.target.value.length >= 1) {
+                const request = el.target.value.toLowerCase();
+                const results = ingredients.filter((ingredient) => {
+                    return ingredient.toLowerCase().includes(request);
                 });
-            } else {
-                recipesPart.innerHTML = "";
-                generateRecipesMainPart(element)
-                generateFilters(element);
-                inputEventsOnClick(element);
+                results.forEach((result) => {
+                    return ingredientsWrapper.append(createDomElements("li", `${result}`, { class: "ingredients__item" }));
+                });
             }
+            ingredientsInputEventOnClick();
         });
-        //ingredientsInputEventOnClick();
+
+        const ingredientsInputEventOnClick = () => {
+            const ingredientsItems = document.querySelectorAll(".ingredients__item");
+            ingredientsItems.forEach((item) => {
+                item.addEventListener("click", () => {
+                    addTag({ label: item.textContent, type: 'ingredient' });
+                    createFilterElements(userTags);
+                });
+            });
+        };
     });
 
     devicesForm.addEventListener("click", () => {
@@ -134,24 +139,29 @@ const inputEventsOnClick = (elements) => {
 			devicesWrapper.innerHTML = "";
 		}
 
-        devicesInput.addEventListener('keyup', e => {
-            let recipesToDisplay = getFilteredRecipes(element);
-            if (e.target.value.length >= 1) {
-                recipesToDisplay = recipesToDisplay.filter(item => {
-                    if (e.includes(item.ingredients)) {
-                        const res = e.filter(tag => item.ingredients.map(i => i.ingredient.toLowerCase()).includes(tag));
-                        tagIngredientDisplay(res);
-                        return res.length;
-                    };
+        devicesInput.addEventListener("keyup", (el) => {
+            devicesWrapper.innerHTML = "";
+            if (el.target.value.length > 1) {
+                const request = el.target.value.toLowerCase();
+                const results = appliance.filter((item) => {
+                    return item.toLowerCase().includes(request);
                 });
-            } else {
-                recipesPart.innerHTML = "";
-                generateRecipesMainPart(element)
-                generateFilters(element);
-                inputEventsOnClick(element);
+                results.forEach((result) => {
+                    return devicesWrapper.append(createDomElements("li", `${result}`, { class: "devices__item" }));
+                });
             }
+            devicesInputEventOnClick();
         });
-		// devicesInputEventOnClick();
+    
+        const devicesInputEventOnClick = () => {
+            const devicesItems = document.querySelectorAll(".devices__item");
+            devicesItems.forEach((item) => {
+                item.addEventListener("click", () => {
+                    addTag({ label: item.textContent, type: 'device' }, userTags);
+                    createFilterElements(userTags);
+                });
+            });
+        };
 	});
 
     ustensilesForm.addEventListener("click", () => {
@@ -176,23 +186,29 @@ const inputEventsOnClick = (elements) => {
 			ustensilesWrapper.innerHTML = "";
 		}
 
-        ustensilesInput.addEventListener('keyup', e => {
-            let recipesToDisplay = getFilteredRecipes(element);
-            if (e.target.value.length >= 1) {
-                recipesToDisplay = recipesToDisplay.filter(item => {
-                    if (e.includes(item.ingredients)) {
-                        const res = e.filter(tag => item.ingredients.map(i => i.ingredient.toLowerCase()).includes(tag));
-                        tagIngredientDisplay(res);
-                        return res.length;
-                    };
+        ustensilesInput.addEventListener("keyup", (el) => {
+            ustensilesWrapper.innerHTML = "";
+            if (el.target.value.length > 1) {
+                const request = el.target.value.toLowerCase();
+                const results = ustensils.filter((ustensil) => {
+                    return ustensil.toLowerCase().includes(request);
                 });
-            } else {
-                recipesPart.innerHTML = "";
-                generateRecipesMainPart(element)
-                generateFilters(element);
-                inputEventsOnClick(element);
+                results.forEach((result) => {
+                    return ustensilesWrapper.append(createDomElements("li", `${result}`, { class: "ustensiles__item" }));
+                });
             }
+            ustensilesInputEventOnClick();
         });
+    
+        const ustensilesInputEventOnClick = () => {
+            const ustensilesItems = document.querySelectorAll(".ustensiles__item");
+            ustensilesItems.forEach((item) => {
+                item.addEventListener("click", () => {
+                    addTag({ label: item.textContent, type: 'ustensil' }, userTags);
+                    createFilterElements(userTags);
+                });
+            });
+        };
 
 		// ustensilesInputEventOnClick();
 	});
@@ -238,10 +254,10 @@ const createFilterElement = (tagFilter) => {
 
 const addTag = (tag) => {
     userTags = [...userTags, tag];
-    createFilterElement(userTags);
+    getFilteredRecipes(userTags);
 }
 
 const removeTags = (tag) => {
     userTags = userTags.filter(item => item !== tag);
-    createFilterElement(userTags);
+    getFilteredRecipes(userTags);
 };

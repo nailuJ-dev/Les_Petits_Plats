@@ -1,5 +1,5 @@
 // Frequent DOM elements
-let selectedTags = [];
+let userTags = [];
 
 
 const filterElements = document.querySelector(".search__filter");

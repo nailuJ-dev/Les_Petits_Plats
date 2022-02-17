@@ -51,11 +51,11 @@ const getFilteredRecipes = (recipes) => {
 	});
 
 	let ingredientTagsRecipes = newBatch
-	if (ingredientInput) {
+	if (userTags) {
 		ingredientTagsRecipes = ingredientTagsRecipes.filter(recipe => {
 			const mappedIngredients = recipe.ingredients.map(item => item.ingredient);
 			let flag = false;
-			if ((mappedIngredients.includes(ingredientInput.toLowerCase()))) {
+			if ((mappedIngredients.includes(userTags.toLowerCase()))) {
 				flag = true;
 			}
 			return flag;
@@ -63,11 +63,11 @@ const getFilteredRecipes = (recipes) => {
 	}
 
 	let ustensilesTagsRecipes = ingredientTagsRecipes
-	if (ustensileInput) {
+	if (userTags) {
 		ustensilesTagsRecipes = ustensilesTagsRecipes.filter(recipe => {
 			let flag = false;
 			console.log(recipe)
-			if ((recipe.ustensils.includes(ustensileInput.toLowerCase()))) {
+			if ((recipe.ustensils.includes(userTags.toLowerCase()))) {
 				flag = true;
 			}
 			return flag;
@@ -75,10 +75,10 @@ const getFilteredRecipes = (recipes) => {
 	}
 
 	let applianceTagsRecipes = ustensilesTagsRecipes
-	if (applianceInput) {
+	if (userTags) {
 		applianceTagsRecipes = applianceTagsRecipes.filter(recipe => {
 			let flag = false;
-			if ((recipe.appliance.includes(applianceInput.toLowerCase()))) {
+			if ((recipe.appliance.includes(userTags.toLowerCase()))) {
 				flag = true;
 			}
 			return flag;
@@ -111,9 +111,9 @@ const init = async () => {
         }
     });
 
-    generateFilters(recipes);
-    inputEventsOnClick(recipes);
-    //searchIntoFilters(recipes)
+    // generateFilters(recipes);
+    // inputEventsOnClick(recipes);
+    // searchIntoFilters(recipes)
     // recipesFiltered(mainSearchBarInput, recipes);
 };
 
