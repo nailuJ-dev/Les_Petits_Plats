@@ -18,7 +18,7 @@ const generateRecipesMainPart = (recipes) => {
 };
 
 
-let lastSearch = [];
+let lastSearching = [];
 
 export function getLastSearching() {
     return lastSearching;
@@ -31,7 +31,7 @@ export function searching(request, appliance, ustensil, ingredients) {
     recipes = ustensilsMatching(recipes, ustensil.toLowerCase());
     recipes = ingredientsMatching(recipes, ingredients.toLowerCase());
     recipes = descriptionMatching(recipes, request.toLowerCase());
-    lastSearch = [appliance, ustensil, ingredients, recipes];
+    lastSearching = [appliance, ustensil, ingredients, recipes];
     console.timeEnd("searching");
     return recipes;
 };
@@ -91,8 +91,7 @@ const init = async () => {
 		//
     let recipes = data.recipes
 
-    let lastSearch = [];
-
+    let lastSearching = [];
 
 };
 
