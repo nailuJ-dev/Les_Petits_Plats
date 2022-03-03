@@ -252,12 +252,12 @@ const createFilterElement = (tagFilter) => {
 	});
 }
 
-const addTag = (tag) => {
+/* const addTag = (tag) => {
     userTags = [...userTags, tag];
     getFilteredRecipes(userTags);
-}
+} */
 
-const removeTags = (tag) => {
+/* const removeTags = (tag) => {
     userTags = userTags.filter(item => item !== tag);
     getFilteredRecipes(userTags);
-};
+}; */
